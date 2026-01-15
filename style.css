@@ -469,33 +469,33 @@ body.dark-mode footer {
     background: #020617;
 }
 
-                .lang-switch {
-                    display: flex;
-                    gap: 10px;
-                    margin-left: 20px;
-                    align-items: center;
-                }
-        
-                .lang-btn {
-                    background: none;
-                    border: 1px solid currentColor;
-                    padding: 4px 8px;
-                    cursor: pointer;
-                    font-size: 0.8rem;
-                    border-radius: 4px;
-                    color: inherit;
-                    opacity: 0.7;
-                }
-        
-                .lang-btn:hover,
-                .lang-btn.active {
-                    opacity: 1;
-                    font-weight: bold;
-                }
-        
-                /* Responsive adjustment for nav */
-                nav .container {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                }
+.lang-switch {
+display: flex;
+gap: 10px;
+margin-left: 20px;
+align-items: center;
+}
+
+.lang-btn {
+background: none;
+border: 1px solid currentColor;
+padding: 4px 8px;
+cursor: pointer;
+font-size: 0.8rem;
+border-radius: 4px;
+color: inherit;
+opacity: 0.7;
+}
+
+.lang-btn:hover,
+.lang-btn.active {
+opacity: 1;
+font-weight: bold;
+}
+
+/* Responsive adjustment for nav */
+nav .container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
