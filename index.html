@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manjaka Alpha - Web Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -19,11 +22,16 @@
                 <span></span>
             </div>
             <ul id="navMenu">
-                <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                <li><a href="#about" onclick="closeMenu()">About</a></li>
-                <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                <li><a href="#home" onclick="closeMenu()" data-i18n="nav-home">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()" data-i18n="nav-about">About</a></li>
+                <li><a href="#projects" onclick="closeMenu()" data-i18n="nav-projects">Projects</a></li>
+                <li><a href="#contact" onclick="closeMenu()" data-i18n="nav-contact">Contact</a></li>
             </ul>
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('fr')">FR</button>
+                <button class="theme-switch" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
         </div>
     </nav>
 
@@ -31,11 +39,11 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Hi, I'm Manjaka Alpha</h1>
-                <p class="subtitle">Full Stack Web Developer</p>
-                <p>I build exceptional digital experiences that combine beautiful design with powerful functionality.
-                </p>
-                <a href="#projects" class="btn">View My Work</a>
+                <h1 data-i18n="hero-greeting">Hi, I'm Manjaka Alpha</h1>
+                <p class="subtitle" data-i18n="hero-subtitle">Full Stack Web Developer</p>
+                <p data-i18n="hero-desc">I build exceptional digital experiences that combine beautiful design with
+                    powerful functionality.</p>
+                <a href="#projects" class="btn" data-i18n="hero-btn">View My Work</a>
             </div>
             <div class="hero-image">
                 <!-- <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='%23fff' opacity='0.1'/%3E%3Ccircle cx='100' cy='80' r='30' fill='%23fff' opacity='0.2'/%3E%3Cpath d='M60 140 Q100 180 140 140' stroke='%23fff' stroke-width='20' fill='none' opacity='0.2'/%3E%3C/svg%3E"
@@ -48,14 +56,14 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2>About Me</h2>
+            <h2 data-i18n="about-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm a passionate web developer with expertise in creating modern, responsive websites and web
-                        applications. With a strong foundation in both front-end and back-end technologies, I bring
-                        ideas to life through clean code and intuitive design.</p>
-                    <p>I love solving complex problems and continuously learning new technologies to stay at the
-                        forefront of web development.</p>
+                    <p data-i18n="about-text-1">I'm a passionate web developer with expertise in creating modern,
+                        responsive websites and web applications. With a strong foundation in both front-end and
+                        back-end technologies, I bring ideas to life through clean code and intuitive design.</p>
+                    <p data-i18n="about-text-2">I love solving complex problems and continuously learning new
+                        technologies to stay at the forefront of web development.</p>
                 </div>
                 <div class="skills-grid">
                     <div class="skill-item">python</div>
@@ -72,16 +80,15 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2>My Projects</h2>
+            <h2 data-i18n="projects-title">My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">📱</div>
                     <div class="project-content">
                         <h3>DevOps Pipeline - Application de Messagerie</h3>
-                        <p>Mise en place d'une chaîne DevOps complète avec tests automatisés et déploiement continu.
-                            Application Django
-                            conteneurisée avec pipeline GitHub Actions pour garantir la qualité et la fiabilité à chaque
-                            déploiement.</p>
+                        <p data-i18n="project-1-desc">Mise en place d'une chaîne DevOps complète avec tests automatisés
+                            et déploiement continu. Application Django conteneurisée avec pipeline GitHub Actions pour
+                            garantir la qualité et la fiabilité à chaque déploiement.</p>
                         <div class="project-tags">
                             <span class="tag">Django</span>
                             <span class="tag">Python</span>
@@ -108,8 +115,8 @@
                     <div class="project-image">📱</div>
                     <div class="project-content">
                         <h3>Task Management App</h3>
-                        <p>A productivity app for organizing tasks, setting priorities, and tracking progress with a
-                            clean interface.</p>
+                        <p data-i18n="project-2-desc">A productivity app for organizing tasks, setting priorities, and
+                            tracking progress with a clean interface.</p>
                         <div class="project-tags">
                             <span class="tag">Vue.js</span>
                             <span class="tag">Firebase</span>
@@ -126,8 +133,8 @@
                     <div class="project-image">🎨</div>
                     <div class="project-content">
                         <h3>Portfolio Website</h3>
-                        <p>A modern, responsive portfolio showcasing creative work with smooth animations and
-                            interactive elements.</p>
+                        <p data-i18n="project-3-desc">A modern, responsive portfolio showcasing creative work with
+                            smooth animations and interactive elements.</p>
                         <div class="project-tags">
                             <span class="tag">HTML5</span>
                             <span class="tag">CSS3</span>
@@ -146,13 +153,13 @@
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
+            <h2 data-i18n="contact-title">Get In Touch</h2>
             <div class="contact-content">
                 <form onsubmit="handleSubmit(event)">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
+                    <input type="text" id="input-name" placeholder="Your Name" required>
+                    <input type="email" id="input-email" placeholder="Your Email" required>
+                    <textarea id="input-message" placeholder="Your Message" required></textarea>
+                    <button type="submit" data-i18n="contact-btn">Send Message</button>
                 </form>
                 <div class="social-links">
                     <a href="#">GitHub</a>
@@ -165,9 +172,89 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Manjaka Alpha. All rights reserved.</p>
+        <p data-i18n="footer-text">&copy; 2024 Manjaka Alpha. All rights reserved.</p>
     </footer>
 
+    <script>
+        const translations = {
+            en: {
+                "nav-home": "Home",
+                "nav-about": "About",
+                "nav-projects": "Projects",
+                "nav-contact": "Contact",
+                "hero-greeting": "Hi, I'm Manjaka Alpha",
+                "hero-subtitle": "Full Stack Web Developer",
+                "hero-desc": "I build exceptional digital experiences that combine beautiful design with powerful functionality.",
+                "hero-btn": "View My Work",
+                "about-title": "About Me",
+                "about-text-1": "I'm a passionate web developer with expertise in creating modern, responsive websites and web applications. With a strong foundation in both front-end and back-end technologies, I bring ideas to life through clean code and intuitive design.",
+                "about-text-2": "I love solving complex problems and continuously learning new technologies to stay at the forefront of web development.",
+                "projects-title": "My Projects",
+                "project-1-desc": "Implementation of a complete DevOps pipeline with automated tests and continuous deployment. Containerized Django application with GitHub Actions pipeline to ensure quality and reliability at every deployment.",
+                "project-2-desc": "A productivity app for organizing tasks, setting priorities, and tracking progress with a clean interface.",
+                "project-3-desc": "A modern, responsive portfolio showcasing creative work with smooth animations and interactive elements.",
+                "contact-title": "Get In Touch",
+                "contact-btn": "Send Message",
+                "footer-text": "© 2024 Manjaka Alpha. All rights reserved."
+            },
+            fr: {
+                "nav-home": "Accueil",
+                "nav-about": "À propos",
+                "nav-projects": "Projets",
+                "nav-contact": "Contact",
+                "hero-greeting": "Bonjour, je suis Manjaka Alpha",
+                "hero-subtitle": "Développeur Web Full Stack",
+                "hero-desc": "Je crée des expériences numériques exceptionnelles alliant design soigné et fonctionnalités puissantes.",
+                "hero-btn": "Voir mon travail",
+                "about-title": "À propos de moi",
+                "about-text-1": "Je suis un développeur web passionné, expert dans la création de sites et d'applications web modernes et réactifs. Avec de solides bases en front-end et back-end, je donne vie aux idées grâce à un code propre et un design intuitif.",
+                "about-text-2": "J'aime résoudre des problèmes complexes et apprendre continuellement de nouvelles technologies pour rester à la pointe du développement web.",
+                "projects-title": "Mes Projets",
+                "project-1-desc": "Mise en place d'une chaîne DevOps complète avec tests automatisés et déploiement continu. Application Django conteneurisée avec pipeline GitHub Actions pour garantir la qualité et la fiabilité à chaque déploiement.",
+                "project-2-desc": "Une application de productivité pour organiser les tâches, définir les priorités et suivre les progrès avec une interface épurée.",
+                "project-3-desc": "Un portfolio moderne et réactif présentant des travaux créatifs avec des animations fluides et des éléments interactifs.",
+                "contact-title": "Contactez-moi",
+                "contact-btn": "Envoyer",
+                "footer-text": "© 2024 Manjaka Alpha. Tous droits réservés."
+            }
+        };
+
+        const placeholders = {
+            en: {
+                "input-name": "Your Name",
+                "input-email": "Your Email",
+                "input-message": "Your Message"
+            },
+            fr: {
+                "input-name": "Votre Nom",
+                "input-email": "Votre Email",
+                "input-message": "Votre Message"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update placeholders
+            for (const [id, text] of Object.entries(placeholders[lang])) {
+                const el = document.getElementById(id);
+                if (el) el.placeholder = text;
+            }
+
+            // Update active button state
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+            });
+        }
+
+        // Initialize with default language (English)
+        setLanguage('en');
+    </script>
     <script src="app.js"></script>
 </body>
 

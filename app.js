@@ -49,3 +49,25 @@ document.querySelectorAll(".project-card, .skill-item").forEach((el) => {
   el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
   observer.observe(el);
 });
+
+// Theme Toggle
+function toggleTheme() {
+  document.body.classList.toggle("dark-mode");
+  const isDark = document.body.classList.contains("dark-mode");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+  updateThemeIcon(isDark);
+}
+
+function updateThemeIcon(isDark) {
+  const btn = document.querySelector(".theme-switch");
+  if (btn) btn.textContent = isDark ? "☀️" : "🌙";
+}
+
+const savedTheme = localStorage.getItem("theme");
+if (
+  savedTheme === "dark" ||
+  (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  document.body.classList.add("dark-mode");
+  updateThemeIcon(true);
+}
