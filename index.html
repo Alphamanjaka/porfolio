@@ -73,6 +73,48 @@
             </div>
         </div>
     </section>
+    <section id="study">
+        <div class="container">
+            <h2 data-i18n="study-title">My Study</h2>
+            <h2 data-i18n="study-title">My Education</h2>
+            <div class="study-content">
+                <div class="study-text">
+                    <p data-i18n="study-text-1">I am currently pursuing a Bachelor's degree in Computer Science at
+                        the University of Antananarivo, where I have developed a strong foundation in programming,
+                        algorithms, and software development principles. My coursework has included projects in web
+                        development, database management, and software engineering, allowing me to apply my skills in
+                        real-world scenarios.</p>
+                    <p data-i18n="study-text-2">In addition to my formal education, I have completed several online
+                        courses and certifications in web development and DevOps, further enhancing my knowledge and
+                        expertise in these areas.</p>
+                <div class="study-item">
+                    <h3 data-i18n="study-master-title">Master 2 MBDS</h3>
+                    <span class="study-date" data-i18n="study-master-date">Current</span>
+                    <p data-i18n="study-master-desc">Currently pursuing a Master's degree in Computer Methods Applied to Business Management (MBDS).</p>
+                </div>
+                <div class="study-item">
+                    <h3 data-i18n="study-license-title">Bachelor in Web Dev & Design</h3>
+                    <span class="study-date" data-i18n="study-license-date">Graduated</span>
+                    <p data-i18n="study-license-desc">Bachelor's degree from IT University. Focused on modern web development and design principles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="certifications">
+        <div class="container">
+            <h2 data-i18n="cert-title">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <h3 data-i18n="cert-1-title">DevOps Foundation</h3>
+                    <p data-i18n="cert-1-desc">LinkedIn Learning - 2023</p>
+                </div>
+                <div class="cert-item">
+                    <h3 data-i18n="cert-2-title">Full Stack Web Dev</h3>
+                    <p data-i18n="cert-2-desc">Udemy - 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Projects Section -->
     <section id="projects">
@@ -110,6 +152,7 @@
 
                 <div class="project-card">
                     <div class="project-image">📱</div>
+                        <div class="project-content">
                     <div class="project-content">
                         <h3>Task Management App</h3>
                         <p data-i18n="project-2-desc">A productivity app for organizing tasks, setting priorities, and
@@ -127,17 +170,36 @@
                 </div>
 
                 <div class="project-card">
-                    <div class="project-image">🎨</div>
+                    <div class="project-image"></div>
                     <div class="project-content">
-                        <h3>Portfolio Website</h3>
-                        <p data-i18n="project-3-desc">A modern, responsive portfolio showcasing creative work with
-                            smooth animations and interactive elements.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
+                        <h3>AI Chatbot</h3>
+                        <p data-i18n="project-4-desc">An intelligent chatbot built with AI technologies for automated
+                            customer support and interaction.</p>
+                        <div class="project-tags" style="text-transform: capitalize;">
+                            <span class="tag">AI</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Python</span>
                         </div>
-                        <div class="project-links">
+                        <div class="project-links" style="text-transform: capitalize;">
+                            <a href="#">Live Demo →</a>
+                            <a href="#">GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <h3>E-commerce Platform</h3>
+                        <p data-i18n="project-5-desc">A full-featured e-commerce platform with user authentication,
+                            product management</p>
+                        <div class="project-tags" style="text-transform: capitalize;">
+                            <span class="tag">blade</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">Mysql</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">JWT</span>
+                        </div>
+                        <div class="project-links" style="text-transform: capitalize;">
                             <a href="#">Live Demo →</a>
                             <a href="#">GitHub →</a>
                         </div>
@@ -161,7 +223,7 @@
                 <div class="social-links">
                     <a href="#">GitHub</a>
                     <a href="#">LinkedIn</a>
-                    <a href="#">Twitter</a>
+                    <a href="#">Facebook</a>
                 </div>
             </div>
         </div>
@@ -186,6 +248,13 @@
                 "about-title": "About Me",
                 "about-text-1": "I'm a passionate web developer with expertise in creating modern, responsive websites and web applications. With a strong foundation in both front-end and back-end technologies, I bring ideas to life through clean code and intuitive design.",
                 "about-text-2": "I love solving complex problems and continuously learning new technologies to stay at the forefront of web development.",
+                "study-title": "My Education",
+                "study-master-title": "Master 2 MBDS",
+                "study-master-date": "Current",
+                "study-master-desc": "Currently pursuing a Master's degree in Computer Methods Applied to Business Management (MBDS). Specializing in Mobility, Big Data, and Systems Integration.",
+                "study-license-title": "Bachelor in Web Dev & Design",
+                "study-license-date": "Graduated",
+                "study-license-desc": "Bachelor's degree from IT University. Focused on modern web development, UI/UX design principles, and software engineering.",
                 "projects-title": "My Projects",
                 "project-1-desc": "Implementation of a complete DevOps pipeline with automated tests and continuous deployment. Containerized Django application with GitHub Actions pipeline to ensure quality and reliability at every deployment.",
                 "project-2-desc": "A productivity app for organizing tasks, setting priorities, and tracking progress with a clean interface.",
@@ -206,6 +275,18 @@
                 "about-title": "À propos de moi",
                 "about-text-1": "Je suis un développeur web passionné, expert dans la création de sites et d'applications web modernes et réactifs. Avec de solides bases en front-end et back-end, je donne vie aux idées grâce à un code propre et un design intuitif.",
                 "about-text-2": "J'aime résoudre des problèmes complexes et apprendre continuellement de nouvelles technologies pour rester à la pointe du développement web.",
+                "study-title": "Ma Formation",
+                "study-master-title": "Master 2 MBDS",
+                "study-master-date": "En cours",
+                "study-master-desc": "Actuellement en Master 2 Méthodes Informatiques Appliquées à la Gestion des Entreprises (MBDS). Spécialisation en Mobilité, Big Data et Intégration de Systèmes.",
+                "study-license-title": "Licence en Dev Web & Design",
+                "study-license-date": "Diplômé",
+                "study-license-desc": "Licence obtenue à l'IT University. Formation axée sur le développement web moderne, le design UI/UX et l'ingénierie logicielle.",
+                "cert-title": "Certifications",
+                "cert-1-title": "Fondamentaux DevOps",
+                "cert-1-desc": "LinkedIn Learning - 2023",
+                "cert-2-title": "Dév Web Full Stack",
+                "cert-2-desc": "Udemy - 2022",
                 "projects-title": "Mes Projets",
                 "project-1-desc": "Mise en place d'une chaîne DevOps complète avec tests automatisés et déploiement continu. Application Django conteneurisée avec pipeline GitHub Actions pour garantir la qualité et la fiabilité à chaque déploiement.",
                 "project-2-desc": "Une application de productivité pour organiser les tâches, définir les priorités et suivre les progrès avec une interface épurée.",
