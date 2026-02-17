@@ -32,6 +32,24 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.style.opacity = "1";
       entry.target.style.transform = "translateY(0)";
 
+      // Animate skill bar if present
+      const bar = entry.target.querySelector(".skill-level");
+      if (bar) {
+        const level = bar.getAttribute("data-level");
+        const percentage = parseInt(level);
+
+        // Couleurs dynamiques selon le niveau
+        if (percentage >= 90) {
+          bar.style.backgroundColor = "#059669"; // Vert (Expert)
+        } else {
+          bar.style.backgroundColor = "#3b82f6"; // Bleu (Intermédiaire)
+        }
+
+        setTimeout(() => {
+          bar.style.width = level;
+        }, 200); // Slight delay for better visual effect
+      }
+
       observer.unobserve(entry.target);
 
       const delayStr = entry.target.style.transitionDelay || "0s";
@@ -84,7 +102,7 @@ window.addEventListener("scroll", () => {
     document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
   const progressBar = document.getElementById("progressBar");
-  if(progressBar) progressBar.style.width = scrolled + "%";
+  if (progressBar) progressBar.style.width = scrolled + "%";
 });
 
 // Active Navigation Link on Scroll
@@ -108,9 +126,9 @@ window.addEventListener("scroll", () => {
 });
 
 // Preloader
-window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    if (loader) {
-        loader.classList.add('hidden');
-    }
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (loader) {
+    loader.classList.add("hidden");
+  }
 });
