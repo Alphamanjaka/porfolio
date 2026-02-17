@@ -49,7 +49,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document
   .querySelectorAll(
-    ".project-card, .skill-item, section h2, .about-content, .contact-content, .tabs, .skills-category h3, .experience-item, .study-item, .cert-item, .testimonial-card, .blog-card",
+    ".project-card, .skill-item, section h2, .about-content, .contact-content, .tabs, .skills-category h3, .experience-item, .study-item, .cert-item, .blog-card",
   )
   .forEach((el) => {
     el.style.opacity = "0";
