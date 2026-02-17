@@ -21,8 +21,6 @@ function closeMenu() {
   menu.classList.remove("active");
 }
 
-
-
 // Scroll animation
 const observerOptions = {
   threshold: 0.1,
@@ -51,12 +49,16 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-document.querySelectorAll(".project-card, .skill-item").forEach((el) => {
-  el.style.opacity = "0";
-  el.style.transform = "translateY(20px)";
-  el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-  observer.observe(el);
-});
+document
+  .querySelectorAll(
+    ".project-card, .skill-item, section h2, .about-content, .contact-content, .tabs, .skills-category h3, .experience-item, .study-item, .cert-item, .testimonial-card",
+  )
+  .forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    observer.observe(el);
+  });
 
 // Add staggered delay for skills
 document.querySelectorAll(".skills-grid").forEach((grid) => {
@@ -88,11 +90,71 @@ if (
 }
 
 // Navbar scroll effect
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('nav');
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
   if (window.scrollY > 50) {
-    nav.classList.add('scrolled');
+    nav.classList.add("scrolled");
   } else {
-    nav.classList.remove('scrolled');
+    nav.classList.remove("scrolled");
   }
 });
+
+// Scroll Progress Bar
+window.addEventListener("scroll", () => {
+  const winScroll =
+    document.body.scrollTop || document.documentElement.scrollTop;
+  const height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById("progressBar").style.width = scrolled + "%";
+});
+
+// Active Navigation Link on Scroll
+window.addEventListener("scroll", () => {
+  let current = "";
+  const sections = document.querySelectorAll("section");
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (window.scrollY >= sectionTop - 150) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  document.querySelectorAll("nav ul li a").forEach((a) => {
+    a.classList.remove("active");
+    if (a.getAttribute("href") === `#${current}`) {
+      a.classList.add("active");
+    }
+  });
+});
+
+// Testimonials Carousel
+const track = document.querySelector(".carousel-track");
+if (track) {
+  const slides = Array.from(track.children);
+  const nextButton = document.querySelector(".carousel-btn.next");
+  const prevButton = document.querySelector(".carousel-btn.prev");
+  let currentSlideIndex = 0;
+
+  const updateSlidePosition = () => {
+    track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+  };
+
+  nextButton.addEventListener("click", () => {
+    currentSlideIndex++;
+    if (currentSlideIndex >= slides.length) {
+      currentSlideIndex = 0;
+    }
+    updateSlidePosition();
+  });
+
+  prevButton.addEventListener("click", () => {
+    currentSlideIndex--;
+    if (currentSlideIndex < 0) {
+      currentSlideIndex = slides.length - 1;
+    }
+    updateSlidePosition();
+  });
+}
