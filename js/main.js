@@ -150,6 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       loadMoreBtn.style.display = 'none'; // Cacher le bouton s'il n'y a pas assez de projets
     }
+    
+    // Ajustement de la taille du bouton
+    loadMoreBtn.style.padding = '0.6rem 1.5rem';
+    loadMoreBtn.style.fontSize = '0.9rem';
 
     loadMoreBtn.addEventListener('click', () => {
       const isExpanded = loadMoreBtn.getAttribute('data-expanded') === 'true';
