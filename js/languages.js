@@ -23,9 +23,11 @@ const translations = {
     "about-text-2":
       "I love solving complex problems and continuously learning new technologies to stay at the forefront of web development.",
     "about-highlight-1-title": "Creative Problem-Solving",
-    "about-highlight-1-desc": "Transforming complex challenges into elegant, functional solutions.",
+    "about-highlight-1-desc":
+      "Transforming complex challenges into elegant, functional solutions.",
     "about-highlight-2-title": "User-Centric Design",
-    "about-highlight-2-desc": "Crafting intuitive and engaging experiences for the end-user.",
+    "about-highlight-2-desc":
+      "Crafting intuitive and engaging experiences for the end-user.",
     "skills-title": "Technical Skills",
     "skills-frontend": "Frontend Development",
     "skills-backend": "Backend Development",
@@ -35,12 +37,12 @@ const translations = {
     "exp-1-company": "GALANA GDP MADAGASCAR.",
     "exp-1-date": "September 2023 - April 2024",
     "exp-1-desc":
-      "Assisted in developing and maintaining web applications. Gained hands-on experience with modern frameworks and agile methodologies.",
+      "Collaborated on the development of scalable web applications using modern frameworks. Optimized database queries and participated in Agile sprints to deliver features on time.",
     "exp-2-title": "Freelance Designer",
     "exp-2-company": "Self-Employed",
     "exp-2-date": "2022 - Present",
     "exp-2-desc":
-      "Designed and built websites for small businesses, focusing on user experience and responsive design.",
+      "Delivered custom, high-performance websites for SMB clients. Managed the entire lifecycle from UI/UX design to deployment and SEO optimization.",
     "study-title": "My Education",
     "study-master-title": "Master 2 MBDS",
     "study-master-date": "Current",
@@ -53,19 +55,19 @@ const translations = {
     "projects-title": "My Projects",
     "project-1-title": "Django DevOps Pipeline",
     "project-1-desc":
-      "Designed and implemented a comprehensive DevOps pipeline for a Django messaging application. Features automated testing, Docker containerization, and continuous deployment via GitHub Actions to ensure high code quality and reliability on a PostgreSQL/Gunicorn stack.",
+      "Engineered a fully automated CI/CD pipeline for a Django application. Integrated Docker for containerization and GitHub Actions for testing, ensuring zero-downtime deployments on a PostgreSQL/Gunicorn stack.",
     "project-2-title": "Task Manager SPA",
     "project-2-desc":
-      "Developed a responsive Single Page Application (SPA) for task management using Vue.js and Firebase. Enables real-time task organization, prioritization, and progress tracking with a clean, user-friendly interface and instant data synchronization.",
+      "Architected a reactive Single Page Application (SPA) with Vue.js and Firebase. Implemented real-time data synchronization and a drag-and-drop interface for seamless task management.",
     "project-3-title": "Portfolio Website",
     "project-3-desc":
-      "Created a modern, fully responsive personal portfolio website to showcase projects and skills. Built with HTML5, CSS3, and vanilla JavaScript, featuring dynamic language switching, dark mode support, and smooth, engaging animations.",
+      "Designed a high-performance portfolio with vanilla JavaScript and CSS3. Features include a custom internationalization system (i18n), dark mode, and intersection observer animations for optimal UX.",
     "project-4-title": "AI Chatbot",
     "project-4-desc":
       "Engineered an intelligent chatbot using Python and Natural Language Processing (NLP) technologies. Designed to provide automated, context-aware customer support and facilitate seamless user interactions 24/7.",
     "project-5-title": "E-commerce Platform",
     "project-5-desc":
-      "Built a robust multi-vendor e-commerce platform using Laravel and MySQL. Features distinct user roles (Admin, Vendor), advanced product and inventory management, secure JWT authentication, and a comprehensive administrative dashboard.",
+      "Developed a scalable multi-vendor e-commerce solution using Laravel. Implemented complex role-based access control (RBAC), JWT authentication, and optimized MySQL schemas for high-volume inventory management.",
     "blog-title": "Latest Articles",
     "blog-1-title": "Getting Started with Web Development",
     "blog-1-desc":
@@ -95,6 +97,8 @@ const translations = {
     "error-email": "Please enter a valid email address.",
     "error-message": "Please enter a message.",
     "footer-text": "© 2024 Manjaka Alpha. All rights reserved.",
+    "show-more": "Show More",
+    "show-less": "Show Less",
   },
   fr: {
     "nav-home": "Accueil",
@@ -120,24 +124,26 @@ const translations = {
     "about-text-2":
       "J'aime résoudre des problèmes complexes et apprendre continuellement de nouvelles technologies pour rester à la pointe du développement web.",
     "about-highlight-1-title": "Résolution Créative de Problèmes",
-    "about-highlight-1-desc": "Transformer les défis complexes en solutions élégantes et fonctionnelles.",
+    "about-highlight-1-desc":
+      "Transformer les défis complexes en solutions élégantes et fonctionnelles.",
     "about-highlight-2-title": "Conception Centrée Utilisateur",
-    "about-highlight-2-desc": "Créer des expériences intuitives et engageantes pour l'utilisateur final.",
+    "about-highlight-2-desc":
+      "Créer des expériences intuitives et engageantes pour l'utilisateur final.",
     "skills-title": "Compétences Techniques",
     "skills-frontend": "Développement Frontend",
     "skills-backend": "Développement Backend",
     "skills-tools": "DevOps & Outils",
     "experience-title": "Expérience Professionnelle",
     "exp-1-title": "Stagiaire Développeur Web",
-    "exp-1-company": "Tech Solutions Inc.",
-    "exp-1-date": "Septembre 2023 - Avril 2023",
+    "exp-1-company": "Galana GDP Madagascar.",
+    "exp-1-date": "Septembre 2023 - Avril 2024",
     "exp-1-desc":
-      "Aide au développement et à la maintenance d'applications web. Expérience pratique acquise avec les frameworks modernes et les méthodologies agiles.",
+      "Collaboration au développement d'applications web évolutives. Optimisation des requêtes de base de données et participation aux sprints Agile pour la livraison de fonctionnalités.",
     "exp-2-title": "Designer Freelance",
     "exp-2-company": "Indépendant",
     "exp-2-date": "2022 - Aujourd'hui",
     "exp-2-desc":
-      "Conception et création de sites web pour de petites entreprises, en se concentrant sur l'expérience utilisateur et le design réactif.",
+      "Livraison de sites web performants et sur mesure pour des PME. Gestion du cycle de vie complet, de la conception UI/UX au déploiement et à l'optimisation SEO.",
     "study-title": "Ma Formation",
     "study-master-title": "Master 2 MBDS",
     "study-master-date": "En cours",
@@ -150,24 +156,24 @@ const translations = {
     "cert-title": "Certifications",
     "cert-1-title": "Fondamentaux DevOps",
     "cert-1-desc": "LinkedIn Learning - 2023",
-    "cert-2-title": "Dév Web Full Stack",
-    "cert-2-desc": "Udemy - 2022",
+    "cert-2-title": "Dev Web Full Stack",
+    "cert-2-desc": "IT University - 2022",
     "projects-title": "Mes Projets",
     "project-1-title": "Pipeline DevOps Django",
     "project-1-desc":
-      "Conception et mise en œuvre d'un pipeline DevOps complet pour une application Django. Intègre des tests automatisés, la conteneurisation Docker et le déploiement continu via GitHub Actions, garantissant fiabilité et qualité sur une stack PostgreSQL/Gunicorn.",
+      "Ingénierie d'un pipeline CI/CD entièrement automatisé pour une application Django. Intégration de Docker et GitHub Actions pour des tests automatisés et des déploiements sans interruption sur une stack PostgreSQL/Gunicorn.",
     "project-2-title": "Gestionnaire de Tâches SPA",
     "project-2-desc":
-      "Développement d'une application SPA de gestion de tâches réactive avec Vue.js et Firebase. Permet l'organisation, la priorisation et le suivi des tâches en temps réel grâce à une interface épurée et une synchronisation instantanée des données.",
+      "Architecture d'une Single Page Application (SPA) réactive avec Vue.js et Firebase. Implémentation de la synchronisation des données en temps réel et d'une interface intuitive pour la gestion des tâches.",
     "project-3-title": "Site Portfolio",
     "project-3-desc":
-      "Création d'un site portfolio personnel moderne et entièrement responsive. Développé en HTML5, CSS3 et JavaScript vanilla, il intègre un changement de langue dynamique, un mode sombre et des animations fluides pour une expérience utilisateur optimale.",
+      "Conception d'un portfolio haute performance en JavaScript vanilla et CSS3. Inclut un système d'internationalisation (i18n) personnalisé, un mode sombre et des animations fluides pour une UX optimale.",
     "project-4-title": "Chatbot IA",
     "project-4-desc":
       "Développement d'un chatbot intelligent utilisant Python et le traitement du langage naturel (NLP). Conçu pour offrir un support client automatisé et contextuel 24/7, améliorant ainsi l'interaction et la satisfaction utilisateur.",
     "project-5-title": "Plateforme E-commerce",
     "project-5-desc":
-      "Réalisation d'une plateforme e-commerce multi-vendeurs robuste sous Laravel et MySQL. Gère les rôles (Admin, Vendeur), la gestion avancée des stocks, l'authentification sécurisée JWT et propose un tableau de bord administratif complet.",
+      "Développement d'une solution e-commerce multi-vendeurs évolutive sous Laravel. Implémentation d'un contrôle d'accès basé sur les rôles (RBAC), authentification JWT et optimisation des schémas MySQL pour la gestion de stocks volumineux.",
     "blog-title": "Derniers Articles",
     "blog-1-title": "Débuter dans le Développement Web",
     "blog-1-desc":
@@ -197,6 +203,8 @@ const translations = {
     "error-email": "Veuillez entrer une adresse email valide.",
     "error-message": "Veuillez entrer un message.",
     "footer-text": "© 2024 Manjaka Alpha. Tous droits réservés.",
+    "show-more": "Voir plus",
+    "show-less": "Voir moins",
   },
 };
 

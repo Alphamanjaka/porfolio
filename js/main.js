@@ -132,3 +132,50 @@ window.addEventListener("load", () => {
     loader.classList.add("hidden");
   }
 });
+
+// Load More Projects Functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  if (loadMoreBtn) {
+    const projects = document.querySelectorAll('.project-card');
+    const itemsToShow = 3; // Nombre de projets à afficher initialement
+
+    // Masquer les projets excédentaires au chargement
+    if (projects.length > itemsToShow) {
+      projects.forEach((project, index) => {
+        if (index >= itemsToShow) {
+          project.classList.add('hidden');
+        }
+      });
+    } else {
+      loadMoreBtn.style.display = 'none'; // Cacher le bouton s'il n'y a pas assez de projets
+    }
+
+    loadMoreBtn.addEventListener('click', () => {
+      const isExpanded = loadMoreBtn.getAttribute('data-expanded') === 'true';
+      const currentLang = localStorage.getItem('language') || 'en';
+
+      if (isExpanded) {
+        // Voir moins
+        projects.forEach((project, index) => {
+          if (index >= itemsToShow) project.classList.add('hidden');
+        });
+        loadMoreBtn.setAttribute('data-expanded', 'false');
+        loadMoreBtn.setAttribute('data-i18n', 'show-more');
+        
+        // Scroll fluide vers le début de la section projets
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Voir plus
+        projects.forEach(project => project.classList.remove('hidden'));
+        loadMoreBtn.setAttribute('data-expanded', 'true');
+        loadMoreBtn.setAttribute('data-i18n', 'show-less');
+      }
+
+      // Mettre à jour le texte du bouton immédiatement
+      if (typeof setLanguage === 'function') {
+        setLanguage(currentLang);
+      }
+    });
+  }
+});
