@@ -107,7 +107,7 @@ const translations = {
     "project-4-desc":
       "Un chatbot intelligent construit avec des technologies d'IA pour un support client automatisé et une interaction fluide.",
     "project-5-desc":
-      "Une plateforme e-commerce complète avec authentification utilisateur, gestion des produits, et intégration de paiement pour une expérience d'achat fluide.",
+      "Une plateforme e-commerce complète avec double profils:Admin et vendeur, gestion des produits, gestion de stock",
     "contact-title": "Contactez-moi",
     "contact-btn": "Envoyer",
     "footer-text": "© 2024 Manjaka Alpha. Tous droits réservés.",
