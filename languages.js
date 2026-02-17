@@ -22,8 +22,8 @@ const translations = {
       "I love solving complex problems and continuously learning new technologies to stay at the forefront of web development.",
     "experience-title": "Professional Experience",
     "exp-1-title": "Web Developer Intern",
-    "exp-1-company": "Tech Solutions Inc.",
-    "exp-1-date": "June 2023 - Aug 2023",
+    "exp-1-company": "GALANA MADAGASCAR.",
+    "exp-1-date": "September 2023 - April 2024",
     "exp-1-desc":
       "Assisted in developing and maintaining web applications. Gained hands-on experience with modern frameworks and agile methodologies.",
     "exp-2-title": "Freelance Designer",
@@ -75,7 +75,7 @@ const translations = {
     "experience-title": "Expérience Professionnelle",
     "exp-1-title": "Stagiaire Développeur Web",
     "exp-1-company": "Tech Solutions Inc.",
-    "exp-1-date": "Juin 2023 - Août 2023",
+    "exp-1-date": "Septembre 2023 - Avril 2023",
     "exp-1-desc":
       "Aide au développement et à la maintenance d'applications web. Expérience pratique acquise avec les frameworks modernes et les méthodologies agiles.",
     "exp-2-title": "Designer Freelance",
