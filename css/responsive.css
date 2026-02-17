@@ -45,7 +45,9 @@
     }
 
     .about-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack columns */
+        gap: 2rem;
+        text-align: center;
     }
 
     .skills-grid {

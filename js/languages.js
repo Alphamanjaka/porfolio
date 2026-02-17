@@ -22,6 +22,10 @@ const translations = {
       "I'm a passionate web developer with expertise in creating modern, responsive websites and web applications. With a strong foundation in both front-end and back-end technologies, I bring ideas to life through clean code and intuitive design.",
     "about-text-2":
       "I love solving complex problems and continuously learning new technologies to stay at the forefront of web development.",
+    "about-highlight-1-title": "Creative Problem-Solving",
+    "about-highlight-1-desc": "Transforming complex challenges into elegant, functional solutions.",
+    "about-highlight-2-title": "User-Centric Design",
+    "about-highlight-2-desc": "Crafting intuitive and engaging experiences for the end-user.",
     "skills-title": "Technical Skills",
     "skills-frontend": "Frontend Development",
     "skills-backend": "Backend Development",
@@ -115,6 +119,10 @@ const translations = {
       "Je suis un développeur web passionné, expert dans la création de sites et d'applications web modernes et réactifs. Avec de solides bases en front-end et back-end, je donne vie aux idées grâce à un code propre et un design intuitif.",
     "about-text-2":
       "J'aime résoudre des problèmes complexes et apprendre continuellement de nouvelles technologies pour rester à la pointe du développement web.",
+    "about-highlight-1-title": "Résolution Créative de Problèmes",
+    "about-highlight-1-desc": "Transformer les défis complexes en solutions élégantes et fonctionnelles.",
+    "about-highlight-2-title": "Conception Centrée Utilisateur",
+    "about-highlight-2-desc": "Créer des expériences intuitives et engageantes pour l'utilisateur final.",
     "skills-title": "Compétences Techniques",
     "skills-frontend": "Développement Frontend",
     "skills-backend": "Développement Backend",
@@ -222,11 +230,33 @@ function setLanguage(lang) {
   }
 
   // Gestion spéciale pour l'effet machine à écrire sur le titre principal
+  // et les animations qui en découlent.
   const heroGreeting = document.querySelector('[data-i18n="hero-greeting"]');
-  if (heroGreeting && typeof startTypewriter === 'function') {
+  const subtitle = document.querySelector(".hero .subtitle");
+  const desc = document.querySelector('.hero [data-i18n="hero-desc"]');
+  const buttons = document.querySelectorAll(".hero .btn");
+
+  // Réinitialiser l'état des animations avant de les relancer
+  if (subtitle) subtitle.classList.remove("visible");
+  if (desc) desc.classList.remove("visible");
+  buttons.forEach((btn) => btn.classList.remove("visible"));
+
+  if (heroGreeting && typeof startTypewriter === "function") {
     // Le texte est déjà défini par la boucle ci-dessus, nous le stockons donc dans data-text
-    heroGreeting.setAttribute('data-text', heroGreeting.innerHTML);
-    startTypewriter(heroGreeting, 100);
+    heroGreeting.setAttribute("data-text", heroGreeting.innerHTML);
+
+    // Démarrer la machine à écrire et fournir un callback pour la suite
+    startTypewriter(heroGreeting, 80, () => {
+      // Une fois la frappe terminée, faire apparaître les autres éléments en cascade
+      if (subtitle) setTimeout(() => subtitle.classList.add("visible"), 100);
+      if (desc) setTimeout(() => desc.classList.add("visible"), 300);
+      if (buttons.length) {
+        setTimeout(
+          () => buttons.forEach((btn) => btn.classList.add("visible")),
+          500,
+        );
+      }
+    });
   }
 
   // Update active button state
