@@ -21,12 +21,7 @@ function closeMenu() {
   menu.classList.remove("active");
 }
 
-// Form submission
-function handleSubmit(e) {
-  e.preventDefault();
-  alert("Thank you for your message! I will get back to you soon.");
-  e.target.reset();
-}
+
 
 // Scroll animation
 const observerOptions = {
@@ -39,6 +34,19 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = "1";
       entry.target.style.transform = "translateY(0)";
+
+      observer.unobserve(entry.target);
+
+      // Restore CSS transitions after animation to fix hover effects
+      const delayStr = entry.target.style.transitionDelay || "0s";
+      const delayMs = delayStr.includes("ms")
+        ? parseFloat(delayStr)
+        : parseFloat(delayStr) * 1000;
+
+      setTimeout(() => {
+        entry.target.style.transition = "";
+        entry.target.style.transitionDelay = "";
+      }, 600 + delayMs);
     }
   });
 }, observerOptions);
@@ -48,6 +56,13 @@ document.querySelectorAll(".project-card, .skill-item").forEach((el) => {
   el.style.transform = "translateY(20px)";
   el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
   observer.observe(el);
+});
+
+// Add staggered delay for skills
+document.querySelectorAll(".skills-grid").forEach((grid) => {
+  grid.querySelectorAll(".skill-item").forEach((item, index) => {
+    item.style.transitionDelay = `${index * 100}ms`;
+  });
 });
 
 // Theme Toggle

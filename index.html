@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manjaka Alpha - Web Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Remplacer par votre Public Key EmailJS
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
 </head>
 
 <body>
@@ -21,6 +28,7 @@
             <ul id="navMenu">
                 <li><a href="#home" onclick="closeMenu()" data-i18n="nav-home">Home</a></li>
                 <li><a href="#about" onclick="closeMenu()" data-i18n="nav-about">About</a></li>
+                <li><a href="#skills" onclick="closeMenu()" data-i18n="nav-skills">Skills</a></li>
                 <li><a href="#resume" onclick="closeMenu()" data-i18n="nav-resume">Resume</a></li>
                 </li>
                 <li><a href="#projects" onclick="closeMenu()" data-i18n="nav-projects">Projects</a></li>
@@ -75,13 +83,44 @@
                     <p data-i18n="about-text-2">I love solving complex problems and continuously learning new
                         technologies to stay at the forefront of web development.</p>
                 </div>
-                <div class="skills-grid" style="text-transform: capitalize;">
-                    <div class="skill-item">Python</div>
-                    <div class="skill-item">Bootstrap</div>
-                    <div class="skill-item">Docker</div>
-                    <div class="skill-item">Angular</div>
-                    <div class="skill-item">Node.js</div>
-                    <div class="skill-item">Git</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 data-i18n="skills-title">Technical Skills</h2>
+            <div class="skills-categories">
+                <div class="skills-category">
+                    <h3 data-i18n="skills-frontend">Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">HTML5 / CSS3</div>
+                        <div class="skill-item">JavaScript (ES6+)</div>
+                        <div class="skill-item">Vue.js</div>
+                        <div class="skill-item">Angular</div>
+                        <div class="skill-item">Bootstrap / Tailwind</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 data-i18n="skills-backend">Backend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Python (Django)</div>
+                        <div class="skill-item">PHP (Laravel)</div>
+                        <div class="skill-item">Node.js</div>
+                        <div class="skill-item">REST APIs</div>
+                        <div class="skill-item">MySQL / PostgreSQL</div>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 data-i18n="skills-tools">DevOps & Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Git / GitHub</div>
+                        <div class="skill-item">Docker</div>
+                        <div class="skill-item">CI/CD</div>
+                        <div class="skill-item">Linux</div>
+                        <div class="skill-item">Agile / Scrum</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,9 +194,22 @@
             <h2 data-i18n="projects-title">My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">📱</div>
+                    <div class="project-image">
+                        <!-- Rocket Icon for DevOps -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z">
+                            </path>
+                            <path
+                                d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z">
+                            </path>
+                            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                        </svg>
+                    </div>
                     <div class="project-content">
-                        <h3>DevOps Pipeline - Application de Messagerie</h3>
+                        <h3 data-i18n="project-1-title">Django DevOps Pipeline</h3>
                         <p data-i18n="project-1-desc">Mise en place d'une chaîne DevOps complète avec tests automatisés
                             et déploiement continu. Application Django conteneurisée avec pipeline GitHub Actions pour
                             garantir la qualité et la fiabilité à chaque déploiement.</p>
@@ -184,9 +236,16 @@
 
 
                 <div class="project-card">
-                    <div class="project-image">📱</div>
+                    <div class="project-image">
+                        <!-- Check List Icon for Task Manager -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                    </div>
                     <div class="project-content">
-                        <h3>Task Management App</h3>
+                        <h3 data-i18n="project-2-title">Task Management App</h3>
                         <p data-i18n="project-2-desc">A productivity app for organizing tasks, setting priorities, and
                             tracking progress with a clean interface.</p>
                         <div class="project-tags" style="text-transform: capitalize;">
@@ -219,9 +278,17 @@
                     </div>
                 </div> -->
                 <div class="project-card">
-                    <div class="project-image"></div>
+                    <div class="project-image">
+                        <!-- Shopping Cart Icon for E-commerce -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                    </div>
                     <div class="project-content">
-                        <h3>E-commerce Platform</h3>
+                        <h3 data-i18n="project-5-title">E-commerce Platform</h3>
                         <p data-i18n="project-5-desc">A full-featured e-commerce platform with user authentication,
                             product management</p>
                         <div class="project-tags" style="text-transform: capitalize;">
@@ -246,16 +313,25 @@
         <div class="container">
             <h2 data-i18n="contact-title">Get In Touch</h2>
             <div class="contact-content">
-                <form onsubmit="handleSubmit(event)">
-                    <input type="text" id="input-name" placeholder="Your Name" required>
-                    <input type="email" id="input-email" placeholder="Your Email" required>
-                    <textarea id="input-message" placeholder="Your Message" required></textarea>
+                <form id="contact-form" onsubmit="handleSubmit(event)">
+                    <input type="text" name="user_name" id="input-name" placeholder="Your Name" required>
+                    <input type="email" name="user_email" id="input-email" placeholder="Your Email" required>
+                    <textarea name="message" id="input-message" placeholder="Your Message" required></textarea>
                     <button type="submit" data-i18n="contact-btn">Send Message</button>
                 </form>
                 <div class="social-links">
-                    <a href="#">GitHub</a>
-                    <a href="#">LinkedIn</a>
-                    <a href="#">Facebook</a>
+                    <a href="https://github.com/alphamanjaka" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/alpha-manjaka-bb7395272" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -271,6 +347,7 @@
 
     <!-- Scripts -->
     <script src="languages.js"></script>
+    <script src="email.js"></script>
     <script>
         // Tab Functionality
         function openTab(evt, tabName) {
