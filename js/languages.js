@@ -221,6 +221,14 @@ function setLanguage(lang) {
     if (el) el.placeholder = text;
   }
 
+  // Gestion spéciale pour l'effet machine à écrire sur le titre principal
+  const heroGreeting = document.querySelector('[data-i18n="hero-greeting"]');
+  if (heroGreeting && typeof startTypewriter === 'function') {
+    // Le texte est déjà défini par la boucle ci-dessus, nous le stockons donc dans data-text
+    heroGreeting.setAttribute('data-text', heroGreeting.innerHTML);
+    startTypewriter(heroGreeting, 100);
+  }
+
   // Update active button state
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.classList.toggle("active", btn.textContent.toLowerCase() === lang);

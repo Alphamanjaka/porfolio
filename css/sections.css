@@ -44,6 +44,20 @@ body.dark-mode h2 {
     animation: fadeInUp 0.8s ease;
 }
 
+/* Cacher le H1 pour l'effet typewriter et ajouter le curseur */
+.hero h1 {
+    visibility: hidden;
+}
+.hero h1.typing::after {
+    content: '|';
+    animation: blink-caret 1s step-end infinite;
+    font-weight: 200;
+    margin-left: 0.1em;
+}
+@keyframes blink-caret {
+    50% { opacity: 0; }
+}
+
 .hero .subtitle {
     font-size: 1.5rem;
     margin-bottom: 1rem;
