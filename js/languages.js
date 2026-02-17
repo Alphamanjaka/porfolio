@@ -4,6 +4,7 @@ const translations = {
     "nav-about": "About",
     "nav-skills": "Skills",
     "nav-projects": "Projects",
+    "nav-blog": "Blog",
     "nav-contact": "Contact",
     "nav-resume": "Resume",
     "resume-title": "My Background",
@@ -61,16 +62,28 @@ const translations = {
     "project-5-title": "E-commerce Platform",
     "project-5-desc":
       "Built a robust multi-vendor e-commerce platform using Laravel and MySQL. Features distinct user roles (Admin, Vendor), advanced product and inventory management, secure JWT authentication, and a comprehensive administrative dashboard.",
+    "blog-title": "Latest Articles",
+    "blog-1-title": "Getting Started with Web Development",
+    "blog-1-desc": "A comprehensive guide for beginners looking to start their journey in web development. Learn about HTML, CSS, and JavaScript.",
+    "blog-1-date": "March 15, 2024",
+    "blog-2-title": "The Power of CSS Grid and Flexbox",
+    "blog-2-desc": "Master modern layout techniques with CSS Grid and Flexbox. Create responsive and complex layouts with ease.",
+    "blog-2-date": "February 28, 2024",
+    "blog-3-title": "Optimizing Website Performance",
+    "blog-1-image": "https://placehold.co/800x400?text=Web+Development",
+    "blog-1-content": `<p>This is the full content for the 'Getting Started with Web Development' article. It covers the basic building blocks of the web: HTML for structure, CSS for styling, and JavaScript for interactivity.</p><p>We'll walk through setting up a basic project, writing your first lines of code, and understanding how these technologies work together to create a simple webpage. This is the perfect starting point for your journey into web development.</p>`,
+    "blog-2-image": "https://placehold.co/800x400?text=CSS+Grid+Flexbox",
+    "blog-2-content": `<p>Dive deep into the two most powerful layout tools in modern CSS. Flexbox is designed for one-dimensional layouts (a row or a column), making it perfect for aligning items in a container. CSS Grid, on the other hand, is designed for two-dimensional layouts, allowing you to control both rows and columns simultaneously.</p><p>This article provides practical examples and compares when to use one over the other to build complex, responsive interfaces with cleaner code.</p>`,
+    "blog-3-image": "https://placehold.co/800x400?text=Performance",
+    "blog-3-content": `<p>A fast website is crucial for user experience and SEO ranking. This article explores key strategies for optimizing your site's performance.</p><p>Topics include image optimization (formats, compression, lazy loading), code minification (CSS, JS), leveraging browser caching, and reducing server response time. Implementing these tips can dramatically improve your load times.</p>`,
+    "blog-3-desc": "Tips and tricks to speed up your website. From image optimization to code minification and caching strategies.",
+    "blog-3-date": "January 10, 2024",
+    "read-more": "Read More",
     "testimonials-title": "Testimonials",
     "testim-1-text": "Manjaka is a highly skilled developer who delivered our project on time and exceeded expectations. The communication was excellent throughout the process.",
     "testim-1-author": "Sarah Johnson",
     "testim-1-role": "Project Manager, TechFlow",
-    "testim-2-text": "Working with Manjaka was a pleasure. His attention to detail and problem-solving skills are top-notch. The final product was exactly what we envisioned.",
-    "testim-2-author": "Michael Chen",
-    "testim-2-role": "CTO, StartUp Inc.",
-    "testim-3-text": "I was impressed by the quality of code and the responsive design. Highly recommended for anyone looking for a professional web developer.",
-    "testim-3-author": "Emily Davis",
-    "testim-3-role": "Founder, CreativeStudio",
+    "back-to-blog": "Back to Blog",
     "contact-title": "Get In Touch",
     "contact-btn": "Send Message",
     "alert-success": "Message sent successfully! I will get back to you soon.",
@@ -85,6 +98,7 @@ const translations = {
     "nav-about": "À propos",
     "nav-skills": "Compétences",
     "nav-projects": "Projets",
+    "nav-blog": "Blog",
     "nav-contact": "Contact",
     "nav-resume": "Parcours",
     "resume-title": "Mon Parcours",
@@ -147,16 +161,28 @@ const translations = {
     "project-5-title": "Plateforme E-commerce",
     "project-5-desc":
       "Réalisation d'une plateforme e-commerce multi-vendeurs robuste sous Laravel et MySQL. Gère les rôles (Admin, Vendeur), la gestion avancée des stocks, l'authentification sécurisée JWT et propose un tableau de bord administratif complet.",
+    "blog-title": "Derniers Articles",
+    "blog-1-title": "Débuter dans le Développement Web",
+    "blog-1-desc": "Un guide complet pour les débutants souhaitant commencer leur parcours dans le développement web. Apprenez HTML, CSS et JavaScript.",
+    "blog-1-date": "15 Mars 2024",
+    "blog-2-title": "La Puissance de CSS Grid et Flexbox",
+    "blog-2-desc": "Maîtrisez les techniques de mise en page modernes avec CSS Grid et Flexbox. Créez des mises en page réactives et complexes facilement.",
+    "blog-2-date": "28 Février 2024",
+    "blog-3-title": "Optimiser la Performance Web",
+    "blog-1-image": "https://placehold.co/800x400?text=Web+Development",
+    "blog-1-content": `<p>Voici le contenu complet de l'article 'Débuter dans le Développement Web'. Il couvre les blocs de construction de base du web : HTML pour la structure, CSS pour le style, et JavaScript pour l'interactivité.</p><p>Nous verrons comment mettre en place un projet de base, écrire vos premières lignes de code et comprendre comment ces technologies fonctionnent ensemble pour créer une page web simple. C'est le point de départ idéal pour votre voyage dans le développement web.</p>`,
+    "blog-2-image": "https://placehold.co/800x400?text=CSS+Grid+Flexbox",
+    "blog-2-content": `<p>Plongez au cœur des deux outils de mise en page les plus puissants du CSS moderne. Flexbox est conçu pour les mises en page unidimensionnelles (une ligne ou une colonne), ce qui le rend parfait pour aligner des éléments dans un conteneur. CSS Grid, d'autre part, est conçu pour les mises en page bidimensionnelles, vous permettant de contrôler à la fois les lignes et les colonnes simultanément.</p><p>Cet article fournit des exemples pratiques et compare quand utiliser l'un plutôt que l'autre pour construire des interfaces complexes et réactives avec un code plus propre.</p>`,
+    "blog-3-image": "https://placehold.co/800x400?text=Performance",
+    "blog-3-content": `<p>Un site web rapide est crucial pour l'expérience utilisateur et le classement SEO. Un site web rapide est crucial pour l'expérience utilisateur et le SEO.</p><p>Les sujets incluent l'optimisation des images (formats, compression, chargement différé), la minification du code (CSS, JS), l'exploitation de la mise en cache du navigateur et la réduction du temps de réponse du serveur. La mise en œuvre de ces conseils peut considérablement améliorer vos temps de chargement.</p>`,
+    "blog-3-desc": "Trucs et astuces pour accélérer votre site web. De l'optimisation des images à la minification du code et aux stratégies de cache.",
+    "blog-3-date": "10 Janvier 2024",
+    "read-more": "Lire la suite",
     "testimonials-title": "Témoignages",
     "testim-1-text": "Manjaka est un développeur très compétent qui a livré notre projet à temps et a dépassé nos attentes. La communication a été excellente tout au long du processus.",
     "testim-1-author": "Sarah Johnson",
     "testim-1-role": "Chef de Projet, TechFlow",
-    "testim-2-text": "Travailler avec Manjaka a été un plaisir. Son souci du détail et ses compétences en résolution de problèmes sont excellents. Le produit final était exactement ce que nous imaginions.",
-    "testim-2-author": "Michael Chen",
-    "testim-2-role": "CTO, StartUp Inc.",
-    "testim-3-text": "J'ai été impressionné par la qualité du code et le design réactif. Hautement recommandé pour quiconque cherche un développeur web professionnel.",
-    "testim-3-author": "Emily Davis",
-    "testim-3-role": "Fondatrice, CreativeStudio",
+    "back-to-blog": "Retour au Blog",
     "contact-title": "Contactez-moi",
     "contact-btn": "Envoyer",
     "alert-success": "Message envoyé avec succès ! Je vous répondrai bientôt.",
@@ -182,10 +208,12 @@ const placeholders = {
 };
 
 function setLanguage(lang) {
+  localStorage.setItem('language', lang);
+  document.documentElement.lang = lang;
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.getAttribute("data-i18n");
     if (translations[lang][key]) {
-      element.textContent = translations[lang][key];
+      element.innerHTML = translations[lang][key];
     }
   });
 
@@ -202,4 +230,5 @@ function setLanguage(lang) {
 }
 
 // Initialize with default language (English)
-setLanguage("en");
+const savedLang = localStorage.getItem('language') || 'en';
+setLanguage(savedLang);

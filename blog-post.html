@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - Manjaka Alpha</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">MA</a>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="navMenu">
+                <li><a href="index.html#home" data-i18n="nav-home">Home</a></li>
+                <li><a href="index.html#about" data-i18n="nav-about">About</a></li>
+                <li><a href="index.html#skills" data-i18n="nav-skills">Skills</a></li>
+                <li><a href="index.html#resume" data-i18n="nav-resume">Resume</a></li>
+                <li><a href="index.html#projects" data-i18n="nav-projects">Projects</a></li>
+                <li><a href="index.html#blog" data-i18n="nav-blog">Blog</a></li>
+                <li><a href="index.html#contact" data-i18n="nav-contact">Contact</a></li>
+            </ul>
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('fr')">FR</button>
+                <button class="theme-switch" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Section -->
+    <main class="post-page">
+        <div class="container" id="post-container">
+            <!-- JS will inject title, meta, and content here -->
+            <a href="index.html#blog" class="btn" data-i18n="back-to-blog" style="margin-top: 2rem;">Back to Blog</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p data-i18n="footer-text">&copy; 2024 Manjaka Alpha. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/languages.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+
+</html>

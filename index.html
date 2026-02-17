@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manjaka Alpha - Web Developer Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -17,6 +17,11 @@
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="container">
@@ -33,6 +38,7 @@
                 <li><a href="#resume" onclick="closeMenu()" data-i18n="nav-resume">Resume</a></li>
                 </li>
                 <li><a href="#projects" onclick="closeMenu()" data-i18n="nav-projects">Projects</a></li>
+                <li><a href="#blog" onclick="closeMenu()" data-i18n="nav-blog">Blog</a></li>
                 <li><a href="#contact" onclick="closeMenu()" data-i18n="nav-contact">Contact</a></li>
             </ul>
             <div class="lang-switch">
@@ -102,11 +108,15 @@
                     <div class="skills-grid">
                         <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
                         <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
-                        <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                        <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
+                        </div>
                         <div class="skill-item"><i class="devicon-vuejs-plain colored"></i><span>Vue.js</span></div>
-                        <div class="skill-item"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
-                        <div class="skill-item"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
-                        <div class="skill-item"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
+                        <div class="skill-item"><i class="devicon-angularjs-plain colored"></i><span>Angular</span>
+                        </div>
+                        <div class="skill-item"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span>
+                        </div>
+                        <div class="skill-item"><i
+                                class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
                     </div>
                 </div>
                 <div class="skills-category">
@@ -115,13 +125,17 @@
                         <div class="skill-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
                         <div class="skill-item"><i class="devicon-django-plain colored"></i><span>Django</span></div>
                         <div class="skill-item"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
-                        <div class="skill-item"><i class="devicon-laravel-original colored"></i><span>Laravel</span></div>
+                        <div class="skill-item"><i class="devicon-laravel-original colored"></i><span>Laravel</span>
+                        </div>
                         <div class="skill-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
                         <div class="skill-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-                        <div class="skill-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                        <div class="skill-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span>
+                        </div>
                         <div class="skill-item">
                             <!-- Custom SVG for API -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #6366f1;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" style="color: #6366f1;">
                                 <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
                                 <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
                                 <line x1="6" y1="6" x2="6.01" y2="6"></line>
@@ -140,7 +154,9 @@
                         <div class="skill-item"><i class="devicon-linux-plain"></i><span>Linux</span></div>
                         <div class="skill-item">
                             <!-- Custom SVG for CI/CD -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #e11d48;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" style="color: #e11d48;">
                                 <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
                                 <line x1="16" y1="8" x2="2" y2="22"></line>
                                 <line x1="17.5" y1="15" x2="9" y2="15"></line>
@@ -149,7 +165,9 @@
                         </div>
                         <div class="skill-item">
                             <!-- Custom SVG for Agile -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #059669;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" style="color: #059669;">
                                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                             </svg>
                             <span>Agile</span>
@@ -342,47 +360,82 @@
         </div>
     </section>
 
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <h2 data-i18n="blog-title">Latest Articles</h2>
+            <div class="projects-grid"> <!-- Using same grid class for consistency -->
+                <!-- Article 1 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 200"
+                            preserveAspectRatio="none">
+                            <rect width="400" height="200" fill="#6366f1" opacity="0.1" />
+                            <path d="M100 100 L300 100" stroke="#6366f1" stroke-width="2" />
+                            <circle cx="200" cy="100" r="20" fill="#6366f1" opacity="0.5" />
+                        </svg>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date" data-i18n="blog-1-date">March 15, 2024</div>
+                        <h3 data-i18n="blog-1-title">Getting Started with Web Development</h3>
+                        <p data-i18n="blog-1-desc">A comprehensive guide for beginners looking to start their journey in
+                            web development.</p>
+                        <a href="blog-post.html?id=blog-1" class="blog-link"><span data-i18n="read-more">Read
+                                More</span> →</a>
+                    </div>
+                </article>
+                <!-- Article 2 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 200"
+                            preserveAspectRatio="none">
+                            <rect width="400" height="200" fill="#8b5cf6" opacity="0.1" />
+                            <rect x="150" y="50" width="100" height="100" rx="10" stroke="#8b5cf6" stroke-width="2"
+                                fill="none" />
+                        </svg>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date" data-i18n="blog-2-date">February 28, 2024</div>
+                        <h3 data-i18n="blog-2-title">The Power of CSS Grid and Flexbox</h3>
+                        <p data-i18n="blog-2-desc">Master modern layout techniques with CSS Grid and Flexbox.</p>
+                        <a href="blog-post.html?id=blog-2" class="blog-link"><span data-i18n="read-more">Read
+                                More</span> →</a>
+                    </div>
+                </article>
+                <!-- Article 3 -->
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 400 200"
+                            preserveAspectRatio="none">
+                            <rect width="400" height="200" fill="#059669" opacity="0.1" />
+                            <path d="M180 120 L200 80 L220 120" stroke="#059669" stroke-width="2" fill="none" />
+                        </svg>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date" data-i18n="blog-3-date">January 10, 2024</div>
+                        <h3 data-i18n="blog-3-title">Optimizing Website Performance</h3>
+                        <p data-i18n="blog-3-desc">Tips and tricks to speed up your website.</p>
+                        <a href="blog-post.html?id=blog-3" class="blog-link"><span data-i18n="read-more">Read
+                                More</span> →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section id="testimonials">
         <div class="container">
             <h2 data-i18n="testimonials-title">Testimonials</h2>
-            <div class="carousel-container">
-                <button class="carousel-btn prev" aria-label="Previous Slide">&#10094;</button>
-                <div class="carousel-track-container">
-                    <ul class="carousel-track">
-                        <li class="carousel-slide">
-                            <div class="testimonial-card">
-                                <div class="quote-icon">❝</div>
-                                <p class="testimonial-text" data-i18n="testim-1-text">Manjaka is a highly skilled developer who delivered our project on time and exceeded expectations.</p>
-                                <div class="testimonial-author">
-                                    <h4 data-i18n="testim-1-author">Sarah Johnson</h4>
-                                    <span data-i18n="testim-1-role">Project Manager, TechFlow</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="carousel-slide">
-                            <div class="testimonial-card">
-                                <div class="quote-icon">❝</div>
-                                <p class="testimonial-text" data-i18n="testim-2-text">Working with Manjaka was a pleasure. His attention to detail and problem-solving skills are top-notch.</p>
-                                <div class="testimonial-author">
-                                    <h4 data-i18n="testim-2-author">Michael Chen</h4>
-                                    <span data-i18n="testim-2-role">CTO, StartUp Inc.</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="carousel-slide">
-                            <div class="testimonial-card">
-                                <div class="quote-icon">❝</div>
-                                <p class="testimonial-text" data-i18n="testim-3-text">I was impressed by the quality of code and the responsive design. Highly recommended!</p>
-                                <div class="testimonial-author">
-                                    <h4 data-i18n="testim-3-author">Emily Davis</h4>
-                                    <span data-i18n="testim-3-role">Founder, CreativeStudio</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="testimonial-card">
+                <div class="quote-icon">❝</div>
+                <p class="testimonial-text" data-i18n="testim-1-text">Manjaka is a highly skilled
+                    developer who delivered our project on time and exceeded expectations. The communication was
+                    excellent throughout the process.</p>
+                <div class="testimonial-author">
+                    <h4 data-i18n="testim-1-author">Sarah Johnson</h4>
+                    <span data-i18n="testim-1-role">Project Manager, TechFlow</span>
                 </div>
-                <button class="carousel-btn next" aria-label="Next Slide">&#10095;</button>
             </div>
         </div>
     </section>
@@ -399,14 +452,21 @@
                     <button type="submit" data-i18n="contact-btn">Send Message</button>
                 </form>
                 <div class="social-links">
-                    <a href="https://github.com/alphamanjaka" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    <a href="https://github.com/alphamanjaka" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                            </path>
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/alpha-manjaka-bb7395272" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <a href="https://www.linkedin.com/in/alpha-manjaka-bb7395272" target="_blank"
+                        rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                            </path>
                             <rect x="2" y="9" width="4" height="12"></rect>
                             <circle cx="4" cy="4" r="2"></circle>
                         </svg>
@@ -425,8 +485,10 @@
     <button id="backToTop" onclick="scrollToTop()" aria-label="Back to Top">↑</button>
 
     <!-- Scripts -->
-    <script src="languages.js"></script>
-    <script src="email.js"></script>
+    <script src="js/languages.js"></script>
+    <script src="js/email.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
     <script>
         // Tab Functionality
         function openTab(evt, tabName) {
@@ -456,7 +518,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
-    <script src="app.js"></script>
 </body>
 
 </html>

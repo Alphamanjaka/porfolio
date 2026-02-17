@@ -51,7 +51,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document
   .querySelectorAll(
-    ".project-card, .skill-item, section h2, .about-content, .contact-content, .tabs, .skills-category h3, .experience-item, .study-item, .cert-item, .testimonial-card",
+    ".project-card, .skill-item, section h2, .about-content, .contact-content, .tabs, .skills-category h3, .experience-item, .study-item, .cert-item, .testimonial-card, .blog-card",
   )
   .forEach((el) => {
     el.style.opacity = "0";
@@ -158,3 +158,52 @@ if (track) {
     updateSlidePosition();
   });
 }
+
+// Blog Post Page Loader
+function loadBlogPost() {
+  const postContainer = document.getElementById('post-container');
+  if (!postContainer) return; // Only run on the blog post page
+
+  const params = new URLSearchParams(window.location.search);
+  const postId = params.get('id');
+  if (!postId) {
+    postContainer.innerHTML = '<h1>Article not found</h1>';
+    return;
+  }
+
+  const lang = localStorage.getItem('language') || 'en';
+
+  const titleKey = `${postId}-title`;
+  const dateKey = `${postId}-date`;
+  const contentKey = `${postId}-content`;
+  const imageKey = `${postId}-image`;
+
+  const title = translations[lang][titleKey] || 'Title not found';
+  const date = translations[lang][dateKey] || '';
+  const content = translations[lang][contentKey] || '<p>Content not found.</p>';
+  const imageUrl = translations[lang][imageKey];
+
+  const header = document.createElement('div');
+  header.className = 'post-header';
+  header.innerHTML = `
+    <h1>${title}</h1>
+    <div class="post-meta">${date}</div>
+  `;
+
+  const contentDiv = document.createElement('article');
+  contentDiv.className = 'post-content';
+  contentDiv.innerHTML = content;
+
+  if (imageUrl) {
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.alt = title;
+    img.className = 'post-featured-image';
+    postContainer.prepend(img);
+  }
+
+  postContainer.prepend(contentDiv);
+  postContainer.prepend(header);
+}
+
+document.addEventListener('DOMContentLoaded', loadBlogPost);
