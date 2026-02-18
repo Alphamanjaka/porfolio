@@ -246,6 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
             chip.addEventListener('click', () => {
                 messageTextarea.value = chip.innerText;
                 messageTextarea.focus(); // Focus on the textarea for better UX
+                // Déclencher manuellement l'événement input pour la validation
+                messageTextarea.dispatchEvent(new Event('input'));
             });
         });
     }
@@ -267,5 +269,61 @@ if (heroSection) {
 
             shape.style.transform = `translateX(${moveX}px) translateY(${moveY}px)`;
         });
+    });
+}
+
+// Real-time Form Validation
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+    const checkFormValidity = () => {
+        let allValid = true;
+        inputs.forEach(input => {
+            const value = input.value.trim();
+            if (input.type === 'email') {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(value)) allValid = false;
+            } else {
+                if (value.length === 0) allValid = false;
+            }
+        });
+
+        if (submitBtn) {
+            submitBtn.disabled = !allValid;
+        }
+    };
+
+    const validate = (input) => {
+        const value = input.value.trim();
+        let isValid = false;
+
+        if (input.type === 'email') {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            isValid = emailPattern.test(value);
+        } else {
+            isValid = value.length > 0;
+        }
+
+        if (value === '') {
+            input.classList.remove('valid', 'invalid');
+        } else if (isValid) {
+            input.classList.add('valid');
+            input.classList.remove('invalid');
+        } else {
+            input.classList.add('invalid');
+            input.classList.remove('valid');
+        }
+        
+        checkFormValidity();
+    };
+
+    // Vérification initiale
+    checkFormValidity();
+
+    inputs.forEach(input => {
+        input.addEventListener('input', () => validate(input));
+        input.addEventListener('blur', () => validate(input));
     });
 }
