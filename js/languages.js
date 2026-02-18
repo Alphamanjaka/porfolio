@@ -90,6 +90,8 @@ const translations = {
     "read-more": "Read More",
     "back-to-blog": "Back to Blog",
     "contact-title": "Get In Touch",
+    "contact-avail":
+      "Your project deserves dedicated expertise. More than just a provider, I immerse myself in your challenges to build tailored solutions that make a difference. Shall we discuss it?",
     "contact-btn": "Send Message",
     "alert-success": "Message sent successfully! I will get back to you soon.",
     "alert-error": "Failed to send message. Please try again later.",
@@ -99,6 +101,10 @@ const translations = {
     "footer-text": "© 2024 Manjaka Alpha. All rights reserved.",
     "show-more": "Show More",
     "show-less": "Show Less",
+    "filter-all": "All",
+    "filter-frontend": "Frontend",
+    "filter-backend": "Backend",
+    "filter-devops": "DevOps",
   },
   fr: {
     "nav-home": "Accueil",
@@ -196,6 +202,8 @@ const translations = {
     "read-more": "Lire la suite",
     "back-to-blog": "Retour au Blog",
     "contact-title": "Contactez-moi",
+    "contact-avail":
+      "Votre projet mérite une expertise dédiée. Plus qu'un prestataire, je m'immerge dans vos défis pour bâtir des solutions sur mesure qui font la différence. Et si nous en discutions ?",
     "contact-btn": "Envoyer",
     "alert-success": "Message envoyé avec succès ! Je vous répondrai bientôt.",
     "alert-error": "Échec de l'envoi du message. Veuillez réessayer plus tard.",
@@ -205,6 +213,10 @@ const translations = {
     "footer-text": "© 2024 Manjaka Alpha. Tous droits réservés.",
     "show-more": "Voir plus",
     "show-less": "Voir moins",
+    "filter-all": "Tous",
+    "filter-frontend": "Frontend",
+    "filter-backend": "Backend",
+    "filter-devops": "DevOps",
   },
 };
 

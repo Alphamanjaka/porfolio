@@ -202,6 +202,24 @@ footer {
     padding: 2rem;
 }
 
+.footer-contact {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+}
+
+.footer-contact a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-contact a:hover { color: white; }
+.footer-contact .separator { color: rgba(255, 255, 255, 0.3); }
+
 /* Animations */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }

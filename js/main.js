@@ -67,7 +67,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document
   .querySelectorAll(
-    ".project-card, .skill-item, section h2, .about-content, .contact-content, .tabs, .skills-category h3, .experience-item, .study-item, .cert-item, .blog-card",
+    ".project-card, .skill-item, section h2, .about-content, .contact-content, .tabs, .skills-category, .experience-item, .study-item, .cert-item, .blog-card",
   )
   .forEach((el) => {
     el.style.opacity = "0";
@@ -135,51 +135,99 @@ window.addEventListener("load", () => {
 
 // Load More Projects Functionality
 document.addEventListener("DOMContentLoaded", () => {
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
-  if (loadMoreBtn) {
-    const projects = document.querySelectorAll('.project-card');
-    const itemsToShow = 3; // Nombre de projets à afficher initialement
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const projects = document.querySelectorAll(".project-card");
+  const itemsToShow = 3;
 
-    // Masquer les projets excédentaires au chargement
-    if (projects.length > itemsToShow) {
-      projects.forEach((project, index) => {
-        if (index >= itemsToShow) {
-          project.classList.add('hidden');
+  // Fonction de filtrage
+  function filterProjects(category) {
+    let visibleCount = 0;
+
+    projects.forEach((project) => {
+      const projectCategory = project.getAttribute("data-category");
+      // Vérifie si la catégorie correspond ou si on est sur 'all'
+      // Utilise includes pour gérer les projets multi-catégories (ex: "backend devops")
+      const isMatch =
+        category === "all" ||
+        (projectCategory && projectCategory.includes(category));
+
+      if (isMatch) {
+        // Si on est sur 'all', on applique la pagination (limite à 3)
+        if (category === "all" && visibleCount >= itemsToShow) {
+          project.classList.add("hidden");
+        } else {
+          project.classList.remove("hidden");
         }
-      });
-    } else {
-      loadMoreBtn.style.display = 'none'; // Cacher le bouton s'il n'y a pas assez de projets
-    }
-    
-    // Ajustement de la taille du bouton
-    loadMoreBtn.style.padding = '0.6rem 1.5rem';
-    loadMoreBtn.style.fontSize = '0.9rem';
+        visibleCount++;
+      } else {
+        project.classList.add("hidden");
+      }
+    });
 
-    loadMoreBtn.addEventListener('click', () => {
-      const isExpanded = loadMoreBtn.getAttribute('data-expanded') === 'true';
-      const currentLang = localStorage.getItem('language') || 'en';
+    // Gestion de la visibilité du bouton Load More
+    if (loadMoreBtn) {
+      if (category === "all" && visibleCount > itemsToShow) {
+        loadMoreBtn.style.display = "inline-block";
+        // Réinitialiser l'état du bouton
+        loadMoreBtn.setAttribute("data-expanded", "false");
+        loadMoreBtn.setAttribute("data-i18n", "show-more");
+        const currentLang = localStorage.getItem("language") || "en";
+        if (typeof setLanguage === "function") setLanguage(currentLang);
+      } else {
+        loadMoreBtn.style.display = "none";
+      }
+    }
+  }
+
+  // Initialisation du bouton Load More
+  if (loadMoreBtn) {
+    // Ajustement de la taille du bouton
+    loadMoreBtn.style.padding = "0.6rem 1.5rem";
+    loadMoreBtn.style.fontSize = "0.9rem";
+
+    loadMoreBtn.addEventListener("click", () => {
+      const isExpanded = loadMoreBtn.getAttribute("data-expanded") === "true";
+      const currentLang = localStorage.getItem("language") || "en";
 
       if (isExpanded) {
         // Voir moins
         projects.forEach((project, index) => {
-          if (index >= itemsToShow) project.classList.add('hidden');
+          if (index >= itemsToShow) project.classList.add("hidden");
         });
-        loadMoreBtn.setAttribute('data-expanded', 'false');
-        loadMoreBtn.setAttribute('data-i18n', 'show-more');
-        
+        loadMoreBtn.setAttribute("data-expanded", "false");
+        loadMoreBtn.setAttribute("data-i18n", "show-more");
+
         // Scroll fluide vers le début de la section projets
-        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+        document
+          .getElementById("projects")
+          .scrollIntoView({ behavior: "smooth" });
       } else {
-        // Voir plus
-        projects.forEach(project => project.classList.remove('hidden'));
-        loadMoreBtn.setAttribute('data-expanded', 'true');
-        loadMoreBtn.setAttribute('data-i18n', 'show-less');
+        // Voir plus (Afficher tous les projets)
+        projects.forEach((project) => project.classList.remove("hidden"));
+        loadMoreBtn.setAttribute("data-expanded", "true");
+        loadMoreBtn.setAttribute("data-i18n", "show-less");
       }
 
       // Mettre à jour le texte du bouton immédiatement
-      if (typeof setLanguage === 'function') {
+      if (typeof setLanguage === "function") {
         setLanguage(currentLang);
       }
     });
   }
+
+  // Écouteurs d'événements pour les filtres
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Gestion de la classe active
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const filterValue = btn.getAttribute("data-filter");
+      filterProjects(filterValue);
+    });
+  });
+
+  // Filtrage initial
+  filterProjects("all");
 });
