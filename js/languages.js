@@ -4,7 +4,7 @@ const translations = {
     "nav-about": "About",
     "nav-skills": "Skills",
     "nav-projects": "Projects",
-    "nav-blog": "Blog",
+    "nav-blog": "Blogs",
     "nav-contact": "Contact",
     "nav-resume": "Resume",
     "resume-title": "My Background",
@@ -19,7 +19,8 @@ const translations = {
     "hero-cv": "Download CV",
     "about-title": "About Me",
     "about-headline": "The elegance of design, the strength of architecture.",
-    "about-sub-headline": "I transform your vision into high-performance digital solutions, where every intuitive interface rests on a robust and scalable technical structure.",
+    "about-sub-headline":
+      "I transform your vision into high-performance digital solutions, where every intuitive interface rests on a robust and scalable technical structure.",
     "about-cta": "Start My Project",
     "stat-projects": "Projects Completed",
     "stat-exp": "Years Experience",
@@ -68,27 +69,123 @@ const translations = {
     "project-5-title": "E-commerce Platform",
     "project-5-desc":
       "Developed a scalable multi-vendor e-commerce solution using Laravel. Implemented complex role-based access control (RBAC), JWT authentication, and optimized MySQL schemas for high-volume inventory management.",
-    "blog-title": "Latest Articles",
-    "blog-1-title": "Getting Started with Web Development",
+    "blog-title": "Architecture & Performance",
+    "blog-1-title":
+      "Why Clean Code Architecture is the Best Investment for Your MVP",
     "blog-1-desc":
-      "A comprehensive guide for beginners looking to start their journey in web development. Learn about HTML, CSS, and JavaScript.",
+      "Discover how a solid foundation accelerates development and reduces technical debt in the long run.",
     "blog-1-date": "March 15, 2024",
-    "blog-2-title": "The Power of CSS Grid and Flexbox",
+    "blog-2-title":
+      "Security & Scalability: Pillars of a Robust Web App in 2026",
     "blog-2-desc":
-      "Master modern layout techniques with CSS Grid and Flexbox. Create responsive and complex layouts with ease.",
+      "Best practices for securing your application while ensuring it can handle growth without breaking.",
     "blog-2-date": "February 28, 2024",
-    "blog-3-title": "Optimizing Website Performance",
-    "blog-1-image": "https://placehold.co/800x400?text=Web+Development",
-    "blog-1-content": `<p>This is the full content for the 'Getting Started with Web Development' article. It covers the basic building blocks of the web: HTML for structure, CSS for styling, and JavaScript for interactivity.</p><p>We'll walk through setting up a basic project, writing your first lines of code, and understanding how these technologies work together to create a simple webpage. This is the perfect starting point for your journey into web development.</p>`,
-    "blog-2-image": "https://placehold.co/800x400?text=CSS+Grid+Flexbox",
-    "blog-2-content": `<p>Dive deep into the two most powerful layout tools in modern CSS. Flexbox is designed for one-dimensional layouts (a row or a column), making it perfect for aligning items in a container. CSS Grid, on the other hand, is designed for two-dimensional layouts, allowing you to control both rows and columns simultaneously.</p><p>This article provides practical examples and compares when to use one over the other to build complex, responsive interfaces with cleaner code.</p>`,
-    "blog-3-image": "https://placehold.co/800x400?text=Performance",
-    "blog-3-content": `<p>A fast website is crucial for user experience and SEO ranking. This article explores key strategies for optimizing your site's performance.</p><p>Topics include image optimization (formats, compression, lazy loading), code minification (CSS, JS), leveraging browser caching, and reducing server response time. Implementing these tips can dramatically improve your load times.</p>`,
+    "blog-3-title": "Optimizing LCP: How I Reduced Load Time by 40%",
+    "blog-1-image": "images/blog-1/featured.png",
+    "blog-1-content": `
+      <div class="toc"><h3>Table of Contents</h3><ul></ul></div>
+      <h2>The Challenge: When Your MVP Starts to Feel Like a Liability</h2>
+      <p>Every successful project starts as a Minimum Viable Product (MVP). But as features are added and the user base grows, the initial codebase, often built for speed, can become a tangled web of technical debt. In a recent project, we faced this exact issue: development slowed down, bugs became frequent, and onboarding new developers was a nightmare. The diagnosis? A monolithic structure without clear boundaries.</p>
+      <img src="images/blog-1/tangled-code.png" alt="Tangled code illustration" class="post-inline-image">
+      <h2>The Solution: Hexagonal Architecture with Django</h2>
+      <p>To solve this, we decided to refactor towards a Clean/Hexagonal Architecture without abandoning our beloved Django framework. The goal was to decouple the business logic (the "core") from external concerns like the database, web frameworks, and third-party services.</p>
+      <h3>Why this stack?</h3>
+      <ul><li><strong>Django:</strong> For its robust ecosystem and "batteries-included" philosophy.</li><li><strong>Hexagonal Architecture:</strong> To enforce strict boundaries, making the code testable and maintainable.</li></ul>
+      <div class="architecture-schema"><img src="images/blog-1/architecture-diagram.png" alt="Diagram of the hexagonal architecture"><p><em>Our application is structured around a core domain, with infrastructure details plugged in as adapters.</em></p></div>
+      <h3>Code in Action: A Service Layer Example</h3>
+      <p>Here is a snippet showing how a "service" in our application layer orchestrates a use case, completely unaware of whether the request came from a Django view or a command-line script.</p>
+      <pre><code class="language-python">
+# domain/services.py
+from .repositories import UserRepository
+from .models import User
+
+class UserRegistrationService:
+    def __init__(self, user_repository: UserRepository):
+        self._user_repository = user_repository
+
+    def register_user(self, email: str, password: str) -> User:
+        if self._user_repository.find_by_email(email):
+            raise ValueError("User with this email already exists.")
+        
+        hashed_password = self._hash_password(password)
+        new_user = User(email=email, password=hashed_password)
+        return self._user_repository.save(new_user)
+</code></pre>
+      <h2>The Results: A Game-Changer for Development</h2>
+      <p>The migration wasn't easy, but the benefits were immediate: development velocity increased by 30%, critical bugs in production dropped by 50%, and unit test coverage went from 40% to over 85%.</p>
+      <div class="article-cta"><p>Need a solid architecture for your project?</p><a href="#contact" class="btn btn-accent" data-i18n="blog-cta">Let's Talk</a></div>`,
+    "blog-2-image": "https://placehold.co/800x400?text=Security+%26+Scale",
+    "blog-2-content": `
+      <div class="toc"><h3>Table of Contents</h3><ul></ul></div>
+      <h2>The Problem: Preparing for Prime Time Traffic</h2>
+      <p>A client's e-commerce platform was preparing for a major marketing campaign. Their current infrastructure was untested for high traffic, and a security audit revealed several vulnerabilities. The challenge was twofold: secure the application and ensure it could handle a 10x traffic spike without crashing.</p>
+      <h2>The Strategy: A Two-Pronged Approach with Laravel</h2>
+      <p>We opted for a robust solution using Laravel, focusing on security hardening and performance tuning.</p>
+      <h3>1. Security Hardening</h3>
+      <p>We implemented a strict Content Security Policy (CSP), secured API endpoints with JWT and rate limiting, and used Laravel's built-in features to prevent XSS and SQL injection attacks.</p>
+      <pre><code class="language-php">
+// app/Http/Kernel.php
+protected $middlewareGroups = [
+    'api' => [
+        'throttle:60,1', // Rate limiting
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        \App\Http\Middleware\EncryptCookies::class,
+    ],
+];
+</code></pre>
+      <h3>2. Scalability Tuning</h3>
+      <p>We introduced a Redis caching layer for frequently accessed data, offloaded jobs to a queue worker, and optimized database queries that were causing bottlenecks.</p>
+      <div class="architecture-schema"><img src="https://placehold.co/800x400?text=Scalable+Laravel+Architecture" alt="Diagram of scalable Laravel architecture"><p><em>Redis and Queue Workers were added to handle the increased load.</em></p></div>
+      <h2>The Outcome: Flawless Performance Under Pressure</h2>
+      <p>The application handled the traffic spike without any downtime. The security audit passed with flying colors, and the client saw a 20% increase in conversions due to the improved site speed and reliability.</p>
+      <div class="article-cta"><p>Is your application ready to scale securely?</p><a href="#contact" class="btn btn-accent" data-i18n="blog-cta">Let's Talk</a></div>`,
+    "blog-3-image": "https://placehold.co/800x400?text=Performance+LCP",
+    "blog-3-content": `
+      <div class="toc"><h3>Table of Contents</h3><ul></ul></div>
+      <h2>The Goal: Sub-2-Second Load Time</h2>
+      <p>A content-heavy SPA (Single Page Application) built with Vue.js was suffering from a poor Largest Contentful Paint (LCP) score of over 3.5 seconds, hurting its SEO ranking and user engagement. The goal was clear: get the LCP under 2 seconds.</p>
+      <img src="https://placehold.co/800x300?text=Performance+Waterfall+Chart" alt="Performance waterfall chart before optimization" class="post-inline-image">
+      <h2>The Tactics: A Multi-faceted Optimization Strategy</h2>
+      <p>After analyzing the performance bottlenecks, I implemented several key optimizations:</p>
+      <ul>
+        <li><strong>Code Splitting:</strong> Using dynamic <code>import()</code> to only load the JavaScript needed for the current view.</li>
+        <li><strong>Image Optimization:</strong> Serving next-gen image formats (AVIF/WebP) and implementing lazy loading for off-screen images.</li>
+        <li><strong>Critical CSS:</strong> Inlining the most critical CSS to render the above-the-fold content instantly.</li>
+      </ul>
+      <h3>Code Example: Route-based Code Splitting in Vue</h3>
+      <p>This is how we configured the Vue Router to split the code into smaller chunks per route.</p>
+      <pre><code class="language-javascript">
+// router/index.js
+import { createRouter, createWebHistory } from 'vue-router';
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    // This route component is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  }
+]
+
+const router = createRouter({ history: createWebHistory(), routes });
+export default router;
+</code></pre>
+      <h2>The Result: A 40% LCP Reduction</h2>
+      <p>The combination of these techniques brought the LCP down to 1.9 seconds, a 40% improvement. This led to a measurable increase in organic traffic and a lower bounce rate.</p>
+      <div class="article-cta"><p>Is your website fast enough for your users?</p><a href="#contact" class="btn btn-accent" data-i18n="blog-cta">Let's Talk</a></div>`,
     "blog-3-desc":
-      "Tips and tricks to speed up your website. From image optimization to code minification and caching strategies.",
+      "A case study on web performance optimization and improving Core Web Vitals for better SEO.",
     "blog-3-date": "January 10, 2024",
+    "similar-articles": "Similar Articles",
+    "toc-title": "Table of Contents",
+    "blog-cta": "Let's Talk",
     "read-more": "Read More",
-    "back-to-blog": "Back to Blog",
+    "back-to-blog": "Back to Blogs",
     "contact-title": "Get In Touch",
     "contact-avail":
       "Your project deserves dedicated expertise. More than just a provider, I immerse myself in your challenges to build tailored solutions that make a difference. Shall we discuss it?",
@@ -115,7 +212,7 @@ const translations = {
     "nav-about": "À propos",
     "nav-skills": "Compétences",
     "nav-projects": "Projets",
-    "nav-blog": "Blog",
+    "nav-blog": "Blogs",
     "nav-contact": "Contact",
     "nav-resume": "Parcours",
     "resume-title": "Mon Parcours",
@@ -130,7 +227,8 @@ const translations = {
     "hero-cv": "Télécharger CV",
     "about-title": "À propos de moi",
     "about-headline": "L'élégance du design, la force de l'architecture.",
-    "about-sub-headline": "Je transforme votre vision en solutions digitales haute performance, où chaque interface intuitive repose sur une structure technique robuste et évolutive.",
+    "about-sub-headline":
+      "Je transforme votre vision en solutions digitales haute performance, où chaque interface intuitive repose sur une structure technique robuste et évolutive.",
     "about-cta": "Démarrer mon projet",
     "stat-projects": "Projets Terminés",
     "stat-exp": "Années d'Expérience",
@@ -184,27 +282,124 @@ const translations = {
     "project-5-title": "Plateforme E-commerce",
     "project-5-desc":
       "Développement d'une solution e-commerce multi-vendeurs évolutive sous Laravel. Implémentation d'un contrôle d'accès basé sur les rôles (RBAC), authentification JWT et optimisation des schémas MySQL pour la gestion de stocks volumineux.",
-    "blog-title": "Derniers Articles",
-    "blog-1-title": "Débuter dans le Développement Web",
+    "blog-title": "Architecture & Performance",
+    "blog-1-title":
+      "Pourquoi une architecture clean code est le meilleur investissement pour votre MVP",
     "blog-1-desc":
-      "Un guide complet pour les débutants souhaitant commencer leur parcours dans le développement web. Apprenez HTML, CSS et JavaScript.",
+      "Découvrez comment une base solide accélère le développement et réduit la dette technique sur le long terme.",
     "blog-1-date": "15 Mars 2024",
-    "blog-2-title": "La Puissance de CSS Grid et Flexbox",
+    "blog-2-title":
+      "Sécurité et Scalabilité : Les piliers d'une application web robuste en 2026",
     "blog-2-desc":
-      "Maîtrisez les techniques de mise en page modernes avec CSS Grid et Flexbox. Créez des mises en page réactives et complexes facilement.",
+      "Les meilleures pratiques pour sécuriser votre application tout en assurant sa croissance sans rupture.",
     "blog-2-date": "28 Février 2024",
-    "blog-3-title": "Optimiser la Performance Web",
-    "blog-1-image": "https://placehold.co/800x400?text=Web+Development",
-    "blog-1-content": `<p>Voici le contenu complet de l'article 'Débuter dans le Développement Web'. Il couvre les blocs de construction de base du web : HTML pour la structure, CSS pour le style, et JavaScript pour l'interactivité.</p><p>Nous verrons comment mettre en place un projet de base, écrire vos premières lignes de code et comprendre comment ces technologies fonctionnent ensemble pour créer une page web simple. C'est le point de départ idéal pour votre voyage dans le développement web.</p>`,
-    "blog-2-image": "https://placehold.co/800x400?text=CSS+Grid+Flexbox",
-    "blog-2-content": `<p>Plongez au cœur des deux outils de mise en page les plus puissants du CSS moderne. Flexbox est conçu pour les mises en page unidimensionnelles (une ligne ou une colonne), ce qui le rend parfait pour aligner des éléments dans un conteneur. CSS Grid, d'autre part, est conçu pour les mises en page bidimensionnelles, vous permettant de contrôler à la fois les lignes et les colonnes simultanément.</p><p>Cet article fournit des exemples pratiques et compare quand utiliser l'un plutôt que l'autre pour construire des interfaces complexes et réactives avec un code plus propre.</p>`,
-    "blog-3-image": "https://placehold.co/800x400?text=Performance",
-    "blog-3-content": `<p>Un site web rapide est crucial pour l'expérience utilisateur et le classement SEO. Un site web rapide est crucial pour l'expérience utilisateur et le SEO.</p><p>Les sujets incluent l'optimisation des images (formats, compression, chargement différé), la minification du code (CSS, JS), l'exploitation de la mise en cache du navigateur et la réduction du temps de réponse du serveur. La mise en œuvre de ces conseils peut considérablement améliorer vos temps de chargement.</p>`,
+    "blog-3-title":
+      "Optimiser le LCP : Comment j'ai réduit le temps de chargement de 40%",
+    "blog-1-image": "images/blog-1/featured.png",
+    "blog-1-content": `
+      <div class="toc"><h3>Table des Matières</h3><ul></ul></div>
+      <h2>Le Défi : Quand votre MVP devient un fardeau</h2>
+      <p>Chaque projet à succès commence comme un Produit Viable Minimum (MVP). Mais à mesure que les fonctionnalités s'ajoutent, le code initial, souvent conçu pour la vitesse, peut devenir un enchevêtrement de dette technique. Sur un projet récent, nous avons fait face à ce problème : le développement a ralenti, les bugs sont devenus fréquents et l'intégration de nouveaux développeurs était un cauchemar. Le diagnostic ? Une structure monolithique sans frontières claires.</p>
+      <img src="images/blog-1/tangled-code.png" alt="Illustration de code complexe" class="post-inline-image">
+      <h2>La Solution : Architecture Hexagonale avec Django</h2>
+      <p>Pour résoudre ce problème, nous avons décidé de refactoriser vers une Architecture Propre/Hexagonale sans abandonner notre framework Django. L'objectif était de découpler la logique métier (le "cœur") des préoccupations externes comme la base de données, les frameworks web et les services tiers.</p>
+      <h3>Pourquoi cette stack ?</h3>
+      <ul><li><strong>Django :</strong> Pour son écosystème robuste et sa philosophie "batteries incluses".</li><li><strong>Architecture Hexagonale :</strong> Pour imposer des limites strictes, rendant le code testable et maintenable.</li></ul>
+      <div class="architecture-schema"><img src="images/blog-1/architecture-diagram.png" alt="Diagramme de l'architecture hexagonale"><p><em>Notre application est structurée autour d'un domaine central, avec les détails d'infrastructure branchés comme des adaptateurs.</em></p></div>
+      <h3>Code en Action : Exemple d'une couche de service</h3>
+      <p>Voici un extrait montrant comment un "service" dans notre couche applicative orchestre un cas d'utilisation, sans savoir si la requête provient d'une vue Django ou d'un script.</p>
+      <pre><code class="language-python">
+# domain/services.py
+from .repositories import UserRepository
+from .models import User
+
+class UserRegistrationService:
+    def __init__(self, user_repository: UserRepository):
+        self._user_repository = user_repository
+
+    def register_user(self, email: str, password: str) -> User:
+        if self._user_repository.find_by_email(email):
+            raise ValueError("Un utilisateur avec cet email existe déjà.")
+        
+        hashed_password = self._hash_password(password)
+        new_user = User(email=email, password=hashed_password)
+        return self._user_repository.save(new_user)
+</code></pre>
+      <h2>Les Résultats : Un tournant pour le développement</h2>
+      <p>La migration n'a pas été facile, mais les bénéfices ont été immédiats : la vélocité de développement a augmenté de 30%, les bugs critiques en production ont chuté de 50%, et la couverture de tests unitaires est passée de 40% à plus de 85%.</p>
+      <div class="article-cta"><p>Besoin d'une architecture solide pour votre projet ?</p><a href="#contact" class="btn btn-accent" data-i18n="blog-cta">Discutons-en</a></div>`,
+    "blog-2-image": "https://placehold.co/800x400?text=Securite+%26+Scale",
+    "blog-2-content": `
+      <div class="toc"><h3>Table des Matières</h3><ul></ul></div>
+      <h2>Le Problème : Préparer le pic de trafic</h2>
+      <p>La plateforme e-commerce d'un client se préparait pour une campagne marketing majeure. Leur infrastructure actuelle n'était pas testée pour un trafic élevé, et un audit de sécurité a révélé plusieurs vulnérabilités. Le défi était double : sécuriser l'application et s'assurer qu'elle puisse gérer un pic de trafic 10x sans tomber.</p>
+      <h2>La Stratégie : Une double approche avec Laravel</h2>
+      <p>Nous avons opté pour une solution robuste utilisant Laravel, en nous concentrant sur le durcissement de la sécurité et l'optimisation des performances.</p>
+      <h3>1. Durcissement de la Sécurité</h3>
+      <p>Nous avons mis en œuvre une politique de sécurité de contenu (CSP) stricte, sécurisé les points de terminaison de l'API avec JWT et une limitation de débit, et utilisé les fonctionnalités intégrées de Laravel pour empêcher les attaques XSS et par injection SQL.</p>
+      <pre><code class="language-php">
+// app/Http/Kernel.php
+protected $middlewareGroups = [
+    'api' => [
+        'throttle:60,1', // Limitation de débit
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        \App\Http\Middleware\EncryptCookies::class,
+    ],
+];
+</code></pre>
+      <h3>2. Optimisation de la Scalabilité</h3>
+      <p>Nous avons introduit une couche de cache Redis pour les données fréquemment consultées, déchargé les tâches vers une file d'attente et optimisé les requêtes de base de données qui causaient des goulots d'étranglement.</p>
+      <div class="architecture-schema"><img src="https://placehold.co/800x400?text=Architecture+Laravel+Scalable" alt="Diagramme d'architecture Laravel scalable"><p><em>Redis et les files d'attente ont été ajoutés pour gérer la charge accrue.</em></p></div>
+      <h2>Le Résultat : Performance sans faille sous pression</h2>
+      <p>L'application a géré le pic de trafic sans aucune interruption de service. L'audit de sécurité a été passé avec succès, et le client a constaté une augmentation de 20% des conversions grâce à l'amélioration de la vitesse et de la fiabilité du site.</p>
+      <div class="article-cta"><p>Votre application est-elle prête à évoluer en toute sécurité ?</p><a href="#contact" class="btn btn-accent" data-i18n="blog-cta">Discutons-en</a></div>`,
+    "blog-3-image": "https://placehold.co/800x400?text=Performance+LCP",
+    "blog-3-content": `
+      <div class="toc"><h3>Table des Matières</h3><ul></ul></div>
+      <h2>L'Objectif : Temps de chargement sous les 2 secondes</h2>
+      <p>Une SPA (Single Page Application) riche en contenu, construite avec Vue.js, souffrait d'un mauvais score LCP (Largest Contentful Paint) de plus de 3,5 secondes, nuisant à son classement SEO et à l'engagement des utilisateurs. L'objectif était clair : passer sous la barre des 2 secondes.</p>
+      <img src="https://placehold.co/800x300?text=Graphique+Performance+Waterfall" alt="Graphique de performance avant optimisation" class="post-inline-image">
+      <h2>Les Tactiques : Une stratégie d'optimisation à plusieurs facettes</h2>
+      <p>Après avoir analysé les goulots d'étranglement, j'ai mis en œuvre plusieurs optimisations clés :</p>
+      <ul>
+        <li><strong>Code Splitting :</strong> Utilisation de l'<code>import()</code> dynamique pour ne charger que le JavaScript nécessaire à la vue actuelle.</li>
+        <li><strong>Optimisation des images :</strong> Servir des formats d'image de nouvelle génération (AVIF/WebP) et implémenter le lazy loading.</li>
+        <li><strong>CSS Critique :</strong> Intégrer en ligne le CSS le plus critique pour un rendu instantané du contenu au-dessus de la ligne de flottaison.</li>
+      </ul>
+      <h3>Exemple de Code : Code Splitting basé sur les routes dans Vue</h3>
+      <p>Voici comment nous avons configuré le routeur Vue pour diviser le code en plus petits morceaux par route.</p>
+      <pre><code class="language-javascript">
+// router/index.js
+import { createRouter, createWebHistory } from 'vue-router';
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    // Ce composant est chargé paresseusement lors de la visite de la route.
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  }
+]
+
+const router = createRouter({ history: createWebHistory(), routes });
+export default router;
+</code></pre>
+      <h2>Le Résultat : Une réduction de 40% du LCP</h2>
+      <p>La combinaison de ces techniques a ramené le LCP à 1,9 seconde, soit une amélioration de 40%. Cela a entraîné une augmentation mesurable du trafic organique et une baisse du taux de rebond.</p>
+      <div class="article-cta"><p>Votre site web est-il assez rapide pour vos utilisateurs ?</p><a href="#contact" class="btn btn-accent" data-i18n="blog-cta">Discutons-en</a></div>`,
     "blog-3-desc":
-      "Trucs et astuces pour accélérer votre site web. De l'optimisation des images à la minification du code et aux stratégies de cache.",
+      "Une étude de cas sur l'optimisation des performances web et l'amélioration des Core Web Vitals pour un meilleur SEO.",
     "blog-3-date": "10 Janvier 2024",
+    "similar-articles": "Articles Similaires",
+    "toc-title": "Table des Matières",
+    "blog-cta": "Discutons-en",
     "read-more": "Lire la suite",
-    "back-to-blog": "Retour au Blog",
+    "back-to-blog": "Retour au Blogs",
     "contact-title": "Contactez-moi",
     "contact-avail":
       "Votre projet mérite une expertise dédiée. Plus qu'un prestataire, je m'immerge dans vos défis pour bâtir des solutions sur mesure qui font la différence. Et si nous en discutions ?",
@@ -291,6 +486,11 @@ function setLanguage(lang) {
   document.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.classList.toggle("active", btn.textContent.toLowerCase() === lang);
   });
+
+  // Re-render blog post if on blog page
+  if (typeof loadBlogPost === "function") {
+    loadBlogPost();
+  }
 }
 
 // Initialize with default language (English)
