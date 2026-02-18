@@ -134,8 +134,8 @@ nav a.active {
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
-    background: white;
-    color: var(--primary);
+    background: var(--primary);
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -145,18 +145,30 @@ nav a.active {
 .btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: var(--primary-dark);
+    color: white;
+}
+
+.btn-accent {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-accent:hover {
+    background: var(--primary-dark);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--primary);
+    color: var(--primary);
     margin-left: 1rem;
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: var(--primary);
+    background: var(--primary);
+    color: white;
 }
 
 input, textarea {
@@ -347,4 +359,14 @@ body.dark-mode input,
 body.dark-mode textarea {
     background: #1e293b;
     color: #cbd5e1;
+}
+
+body.dark-mode .btn-secondary {
+    border-color: white;
+    color: white;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: white;
+    color: var(--primary);
 }

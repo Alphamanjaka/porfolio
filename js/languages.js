@@ -18,16 +18,16 @@ const translations = {
     "hero-btn": "View My Work",
     "hero-cv": "Download CV",
     "about-title": "About Me",
-    "about-text-1":
-      "I'm a passionate web developer with expertise in creating modern, responsive websites and web applications. With a strong foundation in both front-end and back-end technologies, I bring ideas to life through clean code and intuitive design.",
-    "about-text-2":
-      "I love solving complex problems and continuously learning new technologies to stay at the forefront of web development.",
-    "about-highlight-1-title": "Creative Problem-Solving",
-    "about-highlight-1-desc":
-      "Transforming complex challenges into elegant, functional solutions.",
-    "about-highlight-2-title": "User-Centric Design",
-    "about-highlight-2-desc":
-      "Crafting intuitive and engaging experiences for the end-user.",
+    "about-headline": "The elegance of design, the strength of architecture.",
+    "about-sub-headline": "I transform your vision into high-performance digital solutions, where every intuitive interface rests on a robust and scalable technical structure.",
+    "about-cta": "Start My Project",
+    "stat-projects": "Projects Completed",
+    "stat-exp": "Years Experience",
+    "stat-clients": "Happy Clients",
+    "about-card-1": "Clean Code",
+    "about-card-2": "Responsive Design",
+    "about-card-3": "Modern UI/UX",
+    "about-card-4": "SEO Optimized",
     "skills-title": "Technical Skills",
     "skills-frontend": "Frontend Development",
     "skills-backend": "Backend Development",
@@ -125,16 +125,16 @@ const translations = {
     "hero-btn": "Voir mon travail",
     "hero-cv": "Télécharger CV",
     "about-title": "À propos de moi",
-    "about-text-1":
-      "Je suis un développeur web passionné, expert dans la création de sites et d'applications web modernes et réactifs. Avec de solides bases en front-end et back-end, je donne vie aux idées grâce à un code propre et un design intuitif.",
-    "about-text-2":
-      "J'aime résoudre des problèmes complexes et apprendre continuellement de nouvelles technologies pour rester à la pointe du développement web.",
-    "about-highlight-1-title": "Résolution Créative de Problèmes",
-    "about-highlight-1-desc":
-      "Transformer les défis complexes en solutions élégantes et fonctionnelles.",
-    "about-highlight-2-title": "Conception Centrée Utilisateur",
-    "about-highlight-2-desc":
-      "Créer des expériences intuitives et engageantes pour l'utilisateur final.",
+    "about-headline": "L'élégance du design, la force de l'architecture.",
+    "about-sub-headline": "Je transforme votre vision en solutions digitales haute performance, où chaque interface intuitive repose sur une structure technique robuste et évolutive.",
+    "about-cta": "Démarrer mon projet",
+    "stat-projects": "Projets Terminés",
+    "stat-exp": "Années d'Expérience",
+    "stat-clients": "Clients Satisfaits",
+    "about-card-1": "Code Propre",
+    "about-card-2": "Design Réactif",
+    "about-card-3": "UI/UX Moderne",
+    "about-card-4": "Optimisé SEO",
     "skills-title": "Compétences Techniques",
     "skills-frontend": "Développement Frontend",
     "skills-backend": "Développement Backend",

@@ -32,22 +32,33 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.style.opacity = "1";
       entry.target.style.transform = "translateY(0)";
 
-      // Animate skill bar if present
-      const bar = entry.target.querySelector(".skill-level");
-      if (bar) {
-        const level = bar.getAttribute("data-level");
-        const percentage = parseInt(level);
+      // Animate stats counter
+      if (entry.target.classList.contains("stat-item")) {
+        const counter = entry.target.querySelector(".stat-number");
+        if (counter) {
+          const rawText = counter.innerText; // ex: "10+"
+          const target = parseInt(rawText);
+          const suffix = rawText.replace(/[0-9]/g, ""); // Garde le "+"
 
-        // Couleurs dynamiques selon le niveau
-        if (percentage >= 90) {
-          bar.style.backgroundColor = "#059669"; // Vert (Expert)
-        } else {
-          bar.style.backgroundColor = "#3b82f6"; // Bleu (Intermédiaire)
+          let count = 0;
+          const duration = 2000; // Durée de l'animation en ms
+
+          const updateCount = () => {
+            const increment = target / (duration / 16); // ~60 FPS
+            count += increment;
+
+            if (count < target) {
+              counter.innerText =
+                Math.ceil(count).toString().padStart(2, "0") + suffix;
+              requestAnimationFrame(updateCount);
+            } else {
+              counter.innerText = target.toString().padStart(2, "0") + suffix;
+            }
+          };
+
+          // Petit délai pour que l'élément soit bien visible avant de commencer
+          setTimeout(updateCount, 200);
         }
-
-        setTimeout(() => {
-          bar.style.width = level;
-        }, 200); // Slight delay for better visual effect
       }
 
       observer.unobserve(entry.target);
@@ -67,7 +78,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document
   .querySelectorAll(
-    ".project-card, .skill-item, section h2, .about-content, .contact-content, .tabs, .skills-category, .experience-item, .study-item, .cert-item, .blog-card",
+    ".project-card, .skill-item, section h2, .about-content, .contact-content, .tabs, .skills-category, .experience-item, .study-item, .cert-item, .blog-card, .stat-item",
   )
   .forEach((el) => {
     el.style.opacity = "0";
@@ -75,13 +86,6 @@ document
     el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
     observer.observe(el);
   });
-
-// Staggered delay for skills
-document.querySelectorAll(".skills-grid").forEach((grid) => {
-  grid.querySelectorAll(".skill-item").forEach((item, index) => {
-    item.style.transitionDelay = `${index * 100}ms`;
-  });
-});
 
 // Navbar scroll effect
 window.addEventListener("scroll", () => {
@@ -231,3 +235,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // Filtrage initial
   filterProjects("all");
 });
+
+// Parallax effect for hero shapes
+const heroSection = document.querySelector('.hero');
+if (heroSection) {
+    heroSection.addEventListener('mousemove', (e) => {
+        const shapes = document.querySelectorAll('.hero .shape-wrapper');
+        // Calculate position from -1 to 1
+        const x = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+        const y = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+
+        shapes.forEach(shape => {
+            const speed = shape.getAttribute('data-speed');
+            const moveX = x * speed * 10; // Multiplier for effect strength
+            const moveY = y * speed * 10;
+
+            shape.style.transform = `translateX(${moveX}px) translateY(${moveY}px)`;
+        });
+    });
+}

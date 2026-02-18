@@ -69,9 +69,15 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
+            <div class="shape-wrapper shape-1" data-speed="-2">
+                <div class="shape"></div>
+            </div>
+            <div class="shape-wrapper shape-2" data-speed="5">
+                <div class="shape"></div>
+            </div>
+            <div class="shape-wrapper shape-3" data-speed="2">
+                <div class="shape"></div>
+            </div>
         </div>
         <div class="container">
             <div class="hero-content">
@@ -105,25 +111,78 @@
         <div class="container">
             <h2 data-i18n="about-title">About Me</h2>
             <div class="about-content">
-                <div class="about-image">
-                    <img src="profile.jpg" alt="Manjaka Alpha professional photo">
-                </div>
                 <div class="about-text">
-                    <p data-i18n="about-text-1">I'm a passionate web developer with expertise in creating modern,
-                        responsive websites and web applications. With a strong foundation in both front-end and
-                        back-end technologies, I bring ideas to life through clean code and intuitive design.</p>
-                    <p data-i18n="about-text-2">I love solving complex problems and continuously learning new
-                        technologies to stay at the forefront of web development.</p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <h4 data-i18n="about-highlight-1-title">Creative Problem-Solving</h4>
-                            <p data-i18n="about-highlight-1-desc">Transforming complex challenges into elegant,
-                                functional solutions.</p>
+                    <h3 class="about-tagline" data-i18n="about-headline">The elegance of design, the strength of
+                        architecture.</h3>
+                    <p class="about-subtitle" data-i18n="about-sub-headline">I transform your vision into
+                        high-performance digital solutions, where every intuitive interface rests on a robust and
+                        scalable technical structure.</p>
+
+                    <div class="about-cta-wrapper">
+                        <a href="#contact" class="btn btn-accent" data-i18n="about-cta">Start My Project</a>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label" data-i18n="stat-projects">Projects Completed</span>
                         </div>
-                        <div class="highlight-item">
-                            <h4 data-i18n="about-highlight-2-title">User-Centric Design</h4>
-                            <p data-i18n="about-highlight-2-desc">Crafting intuitive and engaging experiences for the
-                                end-user.</p>
+                        <div class="stat-item">
+                            <span class="stat-number">02+</span>
+                            <span class="stat-label" data-i18n="stat-exp">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">05+</span>
+                            <span class="stat-label" data-i18n="stat-clients">Happy Clients</span>
+                        </div>
+                    </div>
+
+                    <!-- Visual Cards Grid -->
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <h4 data-i18n="about-card-1">Clean Code</h4>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                </svg>
+                            </div>
+                            <h4 data-i18n="about-card-2">Responsive</h4>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M12 2.69l5.74 5.88-5.74 5.88-5.74-5.88z"></path>
+                                    <path d="M11 12.69l-5.74 5.88 5.74 5.88 5.74-5.88-5.74-5.88z"></path>
+                                </svg>
+                            </div>
+                            <h4 data-i18n="about-card-3">Modern UI/UX</h4>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </div>
+                            <h4 data-i18n="about-card-4">SEO Optimized</h4>
                         </div>
                     </div>
                 </div>
@@ -135,145 +194,79 @@
     <section id="skills">
         <div class="container">
             <h2 data-i18n="skills-title">Technical Skills</h2>
-            <div class="skills-categories">
-                <div class="skills-category">
-                    <h3 data-i18n="skills-frontend">Frontend</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="devicon-html5-plain colored"></i><span>HTML5</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-css3-plain colored"></i><span>CSS3</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-vuejs-plain colored"></i><span>Vue.js</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-angularjs-plain colored"></i><span>Angular</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="85%"></div>
-                            </div>
-                        </div>
-                    </div>
+            
+            <div class="skills-marquee">
+                <!-- Row 1: Frontend & Languages -->
+                <div class="marquee-track">
+                    <!-- Set 1 -->
+                    <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+                    <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+                    <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                    <div class="skill-item"><i class="devicon-vuejs-plain colored"></i><span>Vue.js</span></div>
+                    <div class="skill-item"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
+                    <div class="skill-item"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+                    <div class="skill-item"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
+                    <div class="skill-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                    <div class="skill-item"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+                    
+                    <!-- Set 2 (Duplicate for infinite loop) -->
+                    <div class="skill-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+                    <div class="skill-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+                    <div class="skill-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                    <div class="skill-item"><i class="devicon-vuejs-plain colored"></i><span>Vue.js</span></div>
+                    <div class="skill-item"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
+                    <div class="skill-item"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+                    <div class="skill-item"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
+                    <div class="skill-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                    <div class="skill-item"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
                 </div>
-                <div class="skills-category">
-                    <h3 data-i18n="skills-backend">Backend</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="devicon-python-plain colored"></i><span>Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="70%"></div>
-                            </div>
 
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-django-plain colored"></i><span>Django</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-php-plain colored"></i><span>PHP</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-laravel-original colored"></i><span>Laravel</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-nodejs-plain colored"></i><span>Node.js</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="70%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="60%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="59%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <!-- Custom SVG for API -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" style="color: #6366f1;">
-                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                            </svg>
-                            <span>REST APIs</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" data-level="45%"></div>
-                            </div>
-                        </div>
+                <!-- Row 2: Backend & Tools (Reverse Direction) -->
+                <div class="marquee-track reverse">
+                    <!-- Set 1 -->
+                    <div class="skill-item"><i class="devicon-django-plain colored"></i><span>Django</span></div>
+                    <div class="skill-item"><i class="devicon-laravel-original colored"></i><span>Laravel</span></div>
+                    <div class="skill-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+                    <div class="skill-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+                    <div class="skill-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                    <div class="skill-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #6366f1;"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                        <span>REST APIs</span>
                     </div>
-                </div>
-                <div class="skills-category">
-                    <h3 data-i18n="skills-tools">DevOps & Tools</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-                        <div class="skill-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
-                        <div class="skill-item"><i class="devicon-docker-plain colored"></i><span>Docker</span>
-                        </div>
-                        <div class="skill-item"><i class="devicon-linux-plain"></i><span>Linux</span></div>
-                        <div class="skill-item">
-                            <!-- Custom SVG for CI/CD -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" style="color: #e11d48;">
-                                <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
-                                <line x1="16" y1="8" x2="2" y2="22"></line>
-                                <line x1="17.5" y1="15" x2="9" y2="15"></line>
-                            </svg>
-                            <span>CI/CD</span>
-                        </div>
-                        <div class="skill-item">
-                            <!-- Custom SVG for Agile -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" style="color: #059669;">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                            </svg>
-                            <span>Agile</span>
-                        </div>
+                    <div class="skill-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                    <div class="skill-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
+                    <div class="skill-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                    <div class="skill-item"><i class="devicon-linux-plain"></i><span>Linux</span></div>
+                    <div class="skill-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #e11d48;"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+                        <span>CI/CD</span>
+                    </div>
+                    <div class="skill-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #059669;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                        <span>Agile</span>
+                    </div>
+
+                    <!-- Set 2 (Duplicate) -->
+                    <div class="skill-item"><i class="devicon-django-plain colored"></i><span>Django</span></div>
+                    <div class="skill-item"><i class="devicon-laravel-original colored"></i><span>Laravel</span></div>
+                    <div class="skill-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+                    <div class="skill-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+                    <div class="skill-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                    <div class="skill-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #6366f1;"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                        <span>REST APIs</span>
+                    </div>
+                    <div class="skill-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                    <div class="skill-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
+                    <div class="skill-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                    <div class="skill-item"><i class="devicon-linux-plain"></i><span>Linux</span></div>
+                    <div class="skill-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #e11d48;"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+                        <span>CI/CD</span>
+                    </div>
+                    <div class="skill-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: #059669;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                        <span>Agile</span>
                     </div>
                 </div>
             </div>
