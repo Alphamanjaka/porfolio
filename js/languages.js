@@ -92,6 +92,10 @@ const translations = {
     "contact-title": "Get In Touch",
     "contact-avail":
       "Your project deserves dedicated expertise. More than just a provider, I immerse myself in your challenges to build tailored solutions that make a difference. Shall we discuss it?",
+    "contact-suggestion-title": "Or start with a suggestion:",
+    "contact-suggestion-1": "I have a project idea to discuss.",
+    "contact-suggestion-2": "I'd like to know your availability.",
+    "contact-suggestion-3": "Can we schedule a quick call?",
     "contact-btn": "Send Message",
     "alert-success": "Message sent successfully! I will get back to you soon.",
     "alert-error": "Failed to send message. Please try again later.",
@@ -204,6 +208,10 @@ const translations = {
     "contact-title": "Contactez-moi",
     "contact-avail":
       "Votre projet mérite une expertise dédiée. Plus qu'un prestataire, je m'immerge dans vos défis pour bâtir des solutions sur mesure qui font la différence. Et si nous en discutions ?",
+    "contact-suggestion-title": "Ou commencez avec une suggestion :",
+    "contact-suggestion-1": "J'ai une idée de projet à discuter.",
+    "contact-suggestion-2": "J'aimerais connaître vos disponibilités.",
+    "contact-suggestion-3": "Pouvons-nous planifier un bref appel ?",
     "contact-btn": "Envoyer",
     "alert-success": "Message envoyé avec succès ! Je vous répondrai bientôt.",
     "alert-error": "Échec de l'envoi du message. Veuillez réessayer plus tard.",

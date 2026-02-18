@@ -236,6 +236,21 @@ document.addEventListener("DOMContentLoaded", () => {
   filterProjects("all");
 });
 
+// Message suggestion chips
+document.addEventListener('DOMContentLoaded', () => {
+    const suggestionChips = document.querySelectorAll('.suggestion-chip');
+    const messageTextarea = document.getElementById('input-message');
+
+    if (suggestionChips.length > 0 && messageTextarea) {
+        suggestionChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                messageTextarea.value = chip.innerText;
+                messageTextarea.focus(); // Focus on the textarea for better UX
+            });
+        });
+    }
+});
+
 // Parallax effect for hero shapes
 const heroSection = document.querySelector('.hero');
 if (heroSection) {
