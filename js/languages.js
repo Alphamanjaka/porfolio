@@ -114,7 +114,7 @@ class UserRegistrationService:
       <h2>The Results: A Game-Changer for Development</h2>
       <p>The migration wasn't easy, but the benefits were immediate: development velocity increased by 30%, critical bugs in production dropped by 50%, and unit test coverage went from 40% to over 85%.</p>
       <div class="article-cta"><p>Need a solid architecture for your project?</p><a href="#contact" class="btn btn-accent" data-i18n="blog-cta">Let's Talk</a></div>`,
-    "blog-2-image": "https://placehold.co/800x400?text=Security+%26+Scale",
+    "blog-2-image": "images/blog-2/featured.png",
     "blog-2-content": `
       <div class="toc"><h3>Table of Contents</h3><ul></ul></div>
       <h2>The Problem: Preparing for Prime Time Traffic</h2>
@@ -135,7 +135,7 @@ protected $middlewareGroups = [
 </code></pre>
       <h3>2. Scalability Tuning</h3>
       <p>We introduced a Redis caching layer for frequently accessed data, offloaded jobs to a queue worker, and optimized database queries that were causing bottlenecks.</p>
-      <div class="architecture-schema"><img src="https://placehold.co/800x400?text=Scalable+Laravel+Architecture" alt="Diagram of scalable Laravel architecture"><p><em>Redis and Queue Workers were added to handle the increased load.</em></p></div>
+      <div class="architecture-schema"><img src="images/blog-2/scalable laravel architecture.png" alt="Diagram of scalable Laravel architecture"><p><em>Redis and Queue Workers were added to handle the increased load.</em></p></div>
       <h2>The Outcome: Flawless Performance Under Pressure</h2>
       <p>The application handled the traffic spike without any downtime. The security audit passed with flying colors, and the client saw a 20% increase in conversions due to the improved site speed and reliability.</p>
       <div class="article-cta"><p>Is your application ready to scale securely?</p><a href="#contact" class="btn btn-accent" data-i18n="blog-cta">Let's Talk</a></div>`,
@@ -328,7 +328,7 @@ class UserRegistrationService:
       <h2>Les Résultats : Un tournant pour le développement</h2>
       <p>La migration n'a pas été facile, mais les bénéfices ont été immédiats : la vélocité de développement a augmenté de 30%, les bugs critiques en production ont chuté de 50%, et la couverture de tests unitaires est passée de 40% à plus de 85%.</p>
       <div class="article-cta"><p>Besoin d'une architecture solide pour votre projet ?</p><a href="#contact" class="btn btn-accent" data-i18n="blog-cta">Discutons-en</a></div>`,
-    "blog-2-image": "https://placehold.co/800x400?text=Securite+%26+Scale",
+    "blog-2-image": "images/blog-2/featured.png",
     "blog-2-content": `
       <div class="toc"><h3>Table des Matières</h3><ul></ul></div>
       <h2>Le Problème : Préparer le pic de trafic</h2>
@@ -349,7 +349,7 @@ protected $middlewareGroups = [
 </code></pre>
       <h3>2. Optimisation de la Scalabilité</h3>
       <p>Nous avons introduit une couche de cache Redis pour les données fréquemment consultées, déchargé les tâches vers une file d'attente et optimisé les requêtes de base de données qui causaient des goulots d'étranglement.</p>
-      <div class="architecture-schema"><img src="https://placehold.co/800x400?text=Architecture+Laravel+Scalable" alt="Diagramme d'architecture Laravel scalable"><p><em>Redis et les files d'attente ont été ajoutés pour gérer la charge accrue.</em></p></div>
+      <div class="architecture-schema"><img src="images/blog-2/scalable laravel architecture.png" alt="Diagramme d'architecture Laravel scalable"><p><em>Redis et les files d'attente ont été ajoutés pour gérer la charge accrue.</em></p></div>
       <h2>Le Résultat : Performance sans faille sous pression</h2>
       <p>L'application a géré le pic de trafic sans aucune interruption de service. L'audit de sécurité a été passé avec succès, et le client a constaté une augmentation de 20% des conversions grâce à l'amélioration de la vitesse et de la fiabilité du site.</p>
       <div class="article-cta"><p>Votre application est-elle prête à évoluer en toute sécurité ?</p><a href="#contact" class="btn btn-accent" data-i18n="blog-cta">Discutons-en</a></div>`,
