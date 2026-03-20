@@ -70,6 +70,9 @@ const translations = {
     "project-5-desc":
       "Developed a scalable multi-vendor e-commerce solution using Laravel. Implemented complex role-based access control (RBAC), JWT authentication, and optimized MySQL schemas for high-volume inventory management.",
     "blog-title": "Architecture & Performance",
+    "project-6-title": "University Grading System (.NET Core)",
+    "project-6-desc":
+      "A university grading management web application built as a two-person university project (binôme). It covers the full flow from academic structure setup (diplomas, semesters, UEs, subjects) to student grades, rankings, dashboards, and exports.",
     "blog-1-title":
       "Why Clean Code Architecture is the Best Investment for Your MVP",
     "blog-1-desc":
@@ -283,6 +286,9 @@ export default router;
     "project-5-desc":
       "Développement d'une solution e-commerce multi-vendeurs évolutive sous Laravel. Implémentation d'un contrôle d'accès basé sur les rôles (RBAC), authentification JWT et optimisation des schémas MySQL pour la gestion de stocks volumineux.",
     "blog-title": "Architecture & Performance",
+    "project-6-title": "Système de Notation Universitaire (.NET Core)",
+    "project-6-desc":
+      "Une application web de gestion des notes universitaires réalisée en binôme dans le cadre d'un projet universitaire. Elle couvre le flux complet, de la configuration de la structure académique (diplômes, semestres, UEs, matières) aux notes des étudiants, classements, tableaux de bord et exports.",
     "blog-1-title":
       "Pourquoi une architecture clean code est le meilleur investissement pour votre MVP",
     "blog-1-desc":
