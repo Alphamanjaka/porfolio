@@ -73,6 +73,9 @@ const translations = {
     "project-6-title": "University Grading System (.NET Core)",
     "project-6-desc":
       "A university grading management web application built as a two-person university project (binôme). It covers the full flow from academic structure setup (diplomas, semesters, UEs, subjects) to student grades, rankings, dashboards, and exports.",
+    "project-7-title": "Flight Sim Pro - Aerodynamic Flight Simulator in JS",
+    "project-7-desc":
+      "Flight Sim Pro is an immersive 2D flight simulator developed entirely in native JavaScript (ES6+), without an external game engine. The core of the project resides in its custom physics engine which simulates complex aerodynamic forces (lift, induced drag, thrust, and gravity) in real-time to offer an authentic piloting experience.",
     "blog-1-title":
       "Why Clean Code Architecture is the Best Investment for Your MVP",
     "blog-1-desc":
@@ -289,6 +292,9 @@ export default router;
     "project-6-title": "Système de Notation Universitaire (.NET Core)",
     "project-6-desc":
       "Une application web de gestion des notes universitaires réalisée en binôme dans le cadre d'un projet universitaire. Elle couvre le flux complet, de la configuration de la structure académique (diplômes, semestres, UEs, matières) aux notes des étudiants, classements, tableaux de bord et exports.",
+    "project-7-title": "Flight Sim Pro - Simulateur de Vol Aérodynamique en JS",
+    "project-7-desc":
+      "Flight Sim Pro est un simulateur de vol 2D immersif développé entièrement en JavaScript natif (ES6+), sans moteur de jeu externe. Le cœur du projet réside dans son moteur physique personnalisé qui simule en temps réel les forces aérodynamiques complexes (portance, traînée induite, poussée et gravité) pour offrir une expérience de pilotage authentique.",
     "blog-1-title":
       "Pourquoi une architecture clean code est le meilleur investissement pour votre MVP",
     "blog-1-desc":
