@@ -76,6 +76,9 @@ const translations = {
     "project-7-title": "Flight Sim Pro - Aerodynamic Flight Simulator in JS",
     "project-7-desc":
       "Flight Sim Pro is an immersive 2D flight simulator developed entirely in native JavaScript (ES6+), without an external game engine. The core of the project resides in its custom physics engine which simulates complex aerodynamic forces (lift, induced drag, thrust, and gravity) in real-time to offer an authentic piloting experience.",
+    "project-8-title": "Secure REST API for a Food Delivery Platform",
+    "project-8-desc":
+      "Development of a complete and secure RESTful API for a food delivery application. This project integrates robust user management with distinct roles (Customer, Restaurant, Courier, Administrator), JWT-based authentication, and role-based authorization. Key features include end-to-end order management, payment processing, delivery tracking, a review system, and advanced data analysis modules. The API is designed following HATEOAS principles for better discoverability and maintainability.",
     "blog-1-title":
       "Why Clean Code Architecture is the Best Investment for Your MVP",
     "blog-1-desc":
@@ -295,6 +298,10 @@ export default router;
     "project-7-title": "Flight Sim Pro - Simulateur de Vol Aérodynamique en JS",
     "project-7-desc":
       "Flight Sim Pro est un simulateur de vol 2D immersif développé entièrement en JavaScript natif (ES6+), sans moteur de jeu externe. Le cœur du projet réside dans son moteur physique personnalisé qui simule en temps réel les forces aérodynamiques complexes (portance, traînée induite, poussée et gravité) pour offrir une expérience de pilotage authentique.",
+    "project-8-title":
+      "API REST Sécurisée pour une Plateforme de Livraison de Repas",
+    "project-8-desc":
+      "Développement d'une API RESTful complète et sécurisée pour une application de livraison de repas. Ce projet intègre une gestion robuste des utilisateurs avec des rôles distincts (Client, Restaurant, Livreur, Administrateur), une authentification basée sur JWT (JSON Web Tokens) et une autorisation par rôles. Les fonctionnalités clés incluent la gestion de bout en bout des commandes, le traitement des paiements, le suivi des livraisons, un système d'avis pour les restaurants, ainsi que des modules d'analyse de données avancés (statistiques sur les restaurants, les clients, la performance des livreurs et des recommandations personnalisées). L'API est conçue en respectant les principes HATEOAS pour une meilleure découvrabilité et maintenabilité, offrant une base solide pour un écosystème de commande de repas dynamique.",
     "blog-1-title":
       "Pourquoi une architecture clean code est le meilleur investissement pour votre MVP",
     "blog-1-desc":
