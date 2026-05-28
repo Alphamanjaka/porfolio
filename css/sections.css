@@ -729,104 +729,6 @@ body.dark-mode .filter-btn.active {
     width: 100%;
     padding: 2rem 0;
 }
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2.5rem;
-    padding: 1rem;
-}
-
-@media (max-width: 480px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.projects-container:hover .marquee-nav {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.marquee-nav.prev {
-    left: 1.5rem;
-}
-
-.marquee-nav.next {
-    right: 1.5rem;
-}
-
-.marquee-nav:hover {
-    background: var(--primary-dark);
-    transform: translateY(-50%) scale(1.15);
-}
-
-.project-card {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(99, 102, 241, 0.1);
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    position: relative;
-}
-
-body.dark-mode .project-card {
-    background: rgba(30, 41, 59, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.project-window-header {
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.03);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.project-window-header .dots {
-    display: flex;
-    gap: 6px;
-}
-
-.project-window-header .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.dot.red {
-    background: #ff5f56;
-}
-
-.dot.yellow {
-    background: #ffbd2e;
-}
-
-.dot.green {
-    background: #27c93f;
-}
-
-.project-status {
-    font-family: 'Monaco', 'Consolas', monospace;
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 4px;
-    background: rgba(99, 102, 241, 0.1);
-    color: var(--primary);
-    border: 1px solid var(--primary);
-}
-
-.project-card:hover {
-    transform: translateY(-12px) scale(1.02);
-    border-color: var(--primary);
-    box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3);
-}
-
 .project-image {
     width: 100%;
     height: 180px;
@@ -914,75 +816,43 @@ body.dark-mode .tag {
     background: transparent;
 }
 
-body.dark-mode #blog {
-    background: transparent;
-}
-
 .blog-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2.5rem;
-    margin-top: 2rem;
-}
-
-/* Responsivité du Slider Projets */
-@media (max-width: 1024px) {
-    .project-card {
-        width: calc((100% - 2rem) / 2);
-    }
-}
-
-@media (max-width: 768px) {
-    .project-card {
-        width: 100%;
-    }
-
-    .projects-marquee {
-        mask-image: none;
-        -webkit-mask-image: none;
-    }
+    margin-top: 3rem;
 }
 
 .blog-card {
-    background: var(--dark);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(99, 102, 241, 0.1);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     display: flex;
     flex-direction: column;
+    height: 100%;
     position: relative;
 }
 
+body.dark-mode .blog-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .blog-window-header {
+    padding: 12px 16px;
     background: rgba(255, 255, 255, 0.03);
-    padding: 10px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     gap: 6px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.blog-window-header .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-}
-
-.dot.red {
-    background: #ff5f56;
-}
-
-.dot.yellow {
-    background: #ffbd2e;
-}
-
-.dot.green {
-    background: #27c93f;
 }
 
 .blog-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-12px) scale(1.02);
     border-color: var(--primary);
-    box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.2);
+    box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3);
 }
 
 .blog-image {
@@ -1030,8 +900,11 @@ body.dark-mode #blog {
     font-size: 1.25rem;
     line-height: 1.4;
     margin-bottom: 1rem;
-    color: #f1f5f9;
+    color: var(--dark);
+    font-weight: 700;
 }
+
+body.dark-mode .blog-content h3 { color: #f1f5f9; }
 
 .blog-footer {
     margin-top: auto;
@@ -1134,19 +1007,6 @@ body.dark-mode .post-content h3 {
 
 .project-links a:hover {
     opacity: 0.8;
-}
-
-/* Responsivité du Slider */
-@media (max-width: 1024px) {
-    .project-card {
-        width: calc((100% - 2rem) / 2);
-    }
-}
-
-@media (max-width: 768px) {
-    .project-card {
-        width: 100%;
-    }
 }
 
 .post-inline-image,
