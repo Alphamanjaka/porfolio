@@ -87,11 +87,15 @@ const translations = {
     "blog-1-desc":
       "Discover how a solid foundation accelerates development and reduces technical debt in the long run.",
     "blog-1-date": "March 15, 2024",
+    "blog-1-tag": "Architecture",
+    "blog-1-time": "5 min read",
     "blog-2-title":
       "Security & Scalability: Pillars of a Robust Web App in 2026",
     "blog-2-desc":
       "Best practices for securing your application while ensuring it can handle growth without breaking.",
     "blog-2-date": "February 28, 2024",
+    "blog-2-tag": "Security",
+    "blog-2-time": "8 min read",
     "blog-3-title": "Optimizing LCP: How I Reduced Load Time by 40%",
     "blog-1-image": "images/blog-1/featured.png",
     "blog-1-content": `
@@ -313,11 +317,15 @@ export default router;
     "blog-1-desc":
       "Découvrez comment une base solide accélère le développement et réduit la dette technique sur le long terme.",
     "blog-1-date": "15 Mars 2024",
+    "blog-1-tag": "Architecture",
+    "blog-1-time": "5 min de lecture",
     "blog-2-title":
       "Sécurité et Scalabilité : Les piliers d'une application web robuste en 2026",
     "blog-2-desc":
       "Les meilleures pratiques pour sécuriser votre application tout en assurant sa croissance sans rupture.",
     "blog-2-date": "28 Février 2024",
+    "blog-2-tag": "Sécurité",
+    "blog-2-time": "8 min de lecture",
     "blog-3-title":
       "Optimiser le LCP : Comment j'ai réduit le temps de chargement de 40%",
     "blog-1-image": "images/blog-1/featured.png",

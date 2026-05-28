@@ -140,84 +140,53 @@ window.addEventListener("load", () => {
 // Load More Projects Functionality
 document.addEventListener("DOMContentLoaded", () => {
   const filterBtns = document.querySelectorAll(".filter-btn");
-  const loadMoreBtn = document.getElementById("loadMoreBtn");
   const projects = document.querySelectorAll(".project-card");
-  const itemsToShow = 3;
+  const dotsContainer = document.getElementById("sliderDots");
+
+  // Initialiser les indicateurs de pagination
+  function updatePaginationDots() {
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = "";
+    const visibleProjects = Array.from(projects).filter(
+      (p) => !p.classList.contains("hidden"),
+    );
+
+    visibleProjects.forEach((_, index) => {
+      const dot = document.createElement("div");
+      dot.classList.add("dot-indicator");
+      if (index === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        const cardWidth =
+          marquee.querySelector(".project-card").offsetWidth + 32;
+        marquee.scrollTo({
+          left: index * cardWidth,
+          behavior: "smooth",
+        });
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  function syncActiveDot() {
+    const cardWidth = marquee.querySelector(".project-card").offsetWidth + 32;
+    const activeIndex = Math.round(marquee.scrollLeft / cardWidth);
+    const dots = dotsContainer.querySelectorAll(".dot-indicator");
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === activeIndex);
+    });
+  }
 
   // Fonction de filtrage
   function filterProjects(category) {
-    let visibleCount = 0;
-
     projects.forEach((project) => {
       const projectCategory = project.getAttribute("data-category");
-      // Vérifie si la catégorie correspond ou si on est sur 'all'
-      // Utilise includes pour gérer les projets multi-catégories (ex: "backend devops")
       const isMatch =
         category === "all" ||
         (projectCategory && projectCategory.includes(category));
 
-      if (isMatch) {
-        // Si on est sur 'all', on applique la pagination (limite à 3)
-        if (category === "all" && visibleCount >= itemsToShow) {
-          project.classList.add("hidden");
-        } else {
-          project.classList.remove("hidden");
-        }
-        visibleCount++;
-      } else {
-        project.classList.add("hidden");
-      }
+      project.classList.toggle("hidden", !isMatch);
     });
-
-    // Gestion de la visibilité du bouton Load More
-    if (loadMoreBtn) {
-      if (category === "all" && visibleCount > itemsToShow) {
-        loadMoreBtn.style.display = "inline-block";
-        // Réinitialiser l'état du bouton
-        loadMoreBtn.setAttribute("data-expanded", "false");
-        loadMoreBtn.setAttribute("data-i18n", "show-more");
-        const currentLang = localStorage.getItem("language") || "en";
-        if (typeof setLanguage === "function") setLanguage(currentLang);
-      } else {
-        loadMoreBtn.style.display = "none";
-      }
-    }
-  }
-
-  // Initialisation du bouton Load More
-  if (loadMoreBtn) {
-    // Ajustement de la taille du bouton
-    loadMoreBtn.style.padding = "0.6rem 1.5rem";
-    loadMoreBtn.style.fontSize = "0.9rem";
-
-    loadMoreBtn.addEventListener("click", () => {
-      const isExpanded = loadMoreBtn.getAttribute("data-expanded") === "true";
-      const currentLang = localStorage.getItem("language") || "en";
-
-      if (isExpanded) {
-        // Voir moins
-        projects.forEach((project, index) => {
-          if (index >= itemsToShow) project.classList.add("hidden");
-        });
-        loadMoreBtn.setAttribute("data-expanded", "false");
-        loadMoreBtn.setAttribute("data-i18n", "show-more");
-
-        // Scroll fluide vers le début de la section projets
-        document
-          .getElementById("projects")
-          .scrollIntoView({ behavior: "smooth" });
-      } else {
-        // Voir plus (Afficher tous les projets)
-        projects.forEach((project) => project.classList.remove("hidden"));
-        loadMoreBtn.setAttribute("data-expanded", "true");
-        loadMoreBtn.setAttribute("data-i18n", "show-less");
-      }
-
-      // Mettre à jour le texte du bouton immédiatement
-      if (typeof setLanguage === "function") {
-        setLanguage(currentLang);
-      }
-    });
+    updatePaginationDots();
   }
 
   // Écouteurs d'événements pour les filtres
@@ -234,96 +203,151 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Filtrage initial
   filterProjects("all");
+
+  const marquee = document.getElementById("projectsMarquee");
+  const track = document.getElementById("marqueeTrack");
+  const btnNext = document.getElementById("nextBtn");
+  const btnPrev = document.getElementById("prevBtn");
+
+  let isDragging = false;
+  let startX, scrollLeft;
+
+  // Sync dots on scroll
+  marquee.addEventListener("scroll", syncActiveDot);
+
+  // Mouse Drag Logic
+  marquee.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startX = e.pageX - marquee.offsetLeft;
+    scrollLeft = marquee.scrollLeft;
+  });
+
+  marquee.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - marquee.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    marquee.style.scrollSnapType = "none"; // Désactive le snap pendant le drag
+    marquee.scrollLeft = scrollLeft - walk;
+  });
+
+  marquee.addEventListener("mouseup", () => {
+    isDragging = false;
+    marquee.style.scrollSnapType = "x mandatory"; // Réactive le snap
+  });
+  marquee.addEventListener("mouseleave", () => {
+    isDragging = false;
+    marquee.style.scrollSnapType = "x mandatory";
+  });
+
+  // Manual Navigation
+  btnNext.addEventListener("click", () => {
+    const firstCard = marquee.querySelector(".project-card");
+    const cardWidth = firstCard ? firstCard.offsetWidth + 32 : 300;
+    marquee.scrollTo({
+      left: marquee.scrollLeft + cardWidth,
+      behavior: "smooth",
+    });
+  });
+
+  btnPrev.addEventListener("click", () => {
+    const firstCard = marquee.querySelector(".project-card");
+    const cardWidth = firstCard ? firstCard.offsetWidth + 32 : 300;
+    marquee.scrollTo({
+      left: marquee.scrollLeft - cardWidth,
+      behavior: "smooth",
+    });
+  });
 });
 
 // Message suggestion chips
-document.addEventListener('DOMContentLoaded', () => {
-    const suggestionChips = document.querySelectorAll('.suggestion-chip');
-    const messageTextarea = document.getElementById('input-message');
+document.addEventListener("DOMContentLoaded", () => {
+  const suggestionChips = document.querySelectorAll(".suggestion-chip");
+  const messageTextarea = document.getElementById("input-message");
 
-    if (suggestionChips.length > 0 && messageTextarea) {
-        suggestionChips.forEach(chip => {
-            chip.addEventListener('click', () => {
-                messageTextarea.value = chip.innerText;
-                messageTextarea.focus(); // Focus on the textarea for better UX
-                // Déclencher manuellement l'événement input pour la validation
-                messageTextarea.dispatchEvent(new Event('input'));
-            });
-        });
-    }
+  if (suggestionChips.length > 0 && messageTextarea) {
+    suggestionChips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        messageTextarea.value = chip.innerText;
+        messageTextarea.focus(); // Focus on the textarea for better UX
+        // Déclencher manuellement l'événement input pour la validation
+        messageTextarea.dispatchEvent(new Event("input"));
+      });
+    });
+  }
 });
 
 // Parallax effect for hero shapes
-const heroSection = document.querySelector('.hero');
+const heroSection = document.querySelector(".hero");
 if (heroSection) {
-    heroSection.addEventListener('mousemove', (e) => {
-        const shapes = document.querySelectorAll('.hero .shape-wrapper');
-        // Calculate position from -1 to 1
-        const x = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
-        const y = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+  heroSection.addEventListener("mousemove", (e) => {
+    const shapes = document.querySelectorAll(".hero .shape-wrapper");
+    // Calculate position from -1 to 1
+    const x = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+    const y = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
 
-        shapes.forEach(shape => {
-            const speed = shape.getAttribute('data-speed');
-            const moveX = x * speed * 10; // Multiplier for effect strength
-            const moveY = y * speed * 10;
+    shapes.forEach((shape) => {
+      const speed = shape.getAttribute("data-speed");
+      const moveX = x * speed * 10; // Multiplier for effect strength
+      const moveY = y * speed * 10;
 
-            shape.style.transform = `translateX(${moveX}px) translateY(${moveY}px)`;
-        });
+      shape.style.transform = `translateX(${moveX}px) translateY(${moveY}px)`;
     });
+  });
 }
 
 // Real-time Form Validation
-const contactForm = document.getElementById('contact-form');
+const contactForm = document.getElementById("contact-form");
 if (contactForm) {
-    const inputs = contactForm.querySelectorAll('input, textarea');
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const inputs = contactForm.querySelectorAll("input, textarea");
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
 
-    const checkFormValidity = () => {
-        let allValid = true;
-        inputs.forEach(input => {
-            const value = input.value.trim();
-            if (input.type === 'email') {
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(value)) allValid = false;
-            } else {
-                if (value.length === 0) allValid = false;
-            }
-        });
-
-        if (submitBtn) {
-            submitBtn.disabled = !allValid;
-        }
-    };
-
-    const validate = (input) => {
-        const value = input.value.trim();
-        let isValid = false;
-
-        if (input.type === 'email') {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            isValid = emailPattern.test(value);
-        } else {
-            isValid = value.length > 0;
-        }
-
-        if (value === '') {
-            input.classList.remove('valid', 'invalid');
-        } else if (isValid) {
-            input.classList.add('valid');
-            input.classList.remove('invalid');
-        } else {
-            input.classList.add('invalid');
-            input.classList.remove('valid');
-        }
-        
-        checkFormValidity();
-    };
-
-    // Vérification initiale
-    checkFormValidity();
-
-    inputs.forEach(input => {
-        input.addEventListener('input', () => validate(input));
-        input.addEventListener('blur', () => validate(input));
+  const checkFormValidity = () => {
+    let allValid = true;
+    inputs.forEach((input) => {
+      const value = input.value.trim();
+      if (input.type === "email") {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(value)) allValid = false;
+      } else {
+        if (value.length === 0) allValid = false;
+      }
     });
+
+    if (submitBtn) {
+      submitBtn.disabled = !allValid;
+    }
+  };
+
+  const validate = (input) => {
+    const value = input.value.trim();
+    let isValid = false;
+
+    if (input.type === "email") {
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      isValid = emailPattern.test(value);
+    } else {
+      isValid = value.length > 0;
+    }
+
+    if (value === "") {
+      input.classList.remove("valid", "invalid");
+    } else if (isValid) {
+      input.classList.add("valid");
+      input.classList.remove("invalid");
+    } else {
+      input.classList.add("invalid");
+      input.classList.remove("valid");
+    }
+
+    checkFormValidity();
+  };
+
+  // Vérification initiale
+  checkFormValidity();
+
+  inputs.forEach((input) => {
+    input.addEventListener("input", () => validate(input));
+    input.addEventListener("blur", () => validate(input));
+  });
 }
