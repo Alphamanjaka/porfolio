@@ -141,40 +141,9 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const filterBtns = document.querySelectorAll(".filter-btn");
   const projects = document.querySelectorAll(".project-card");
-  const dotsContainer = document.getElementById("sliderDots");
+  const projectsGrid = document.getElementById("projectsGrid");
 
-  // Initialiser les indicateurs de pagination
-  function updatePaginationDots() {
-    if (!dotsContainer) return;
-    dotsContainer.innerHTML = "";
-    const visibleProjects = Array.from(projects).filter(
-      (p) => !p.classList.contains("hidden"),
-    );
-
-    visibleProjects.forEach((_, index) => {
-      const dot = document.createElement("div");
-      dot.classList.add("dot-indicator");
-      if (index === 0) dot.classList.add("active");
-      dot.addEventListener("click", () => {
-        const cardWidth =
-          marquee.querySelector(".project-card").offsetWidth + 32;
-        marquee.scrollTo({
-          left: index * cardWidth,
-          behavior: "smooth",
-        });
-      });
-      dotsContainer.appendChild(dot);
-    });
-  }
-
-  function syncActiveDot() {
-    const cardWidth = marquee.querySelector(".project-card").offsetWidth + 32;
-    const activeIndex = Math.round(marquee.scrollLeft / cardWidth);
-    const dots = dotsContainer.querySelectorAll(".dot-indicator");
-    dots.forEach((dot, index) => {
-      dot.classList.toggle("active", index === activeIndex);
-    });
-  }
+  if (!projectsGrid) return;
 
   // Fonction de filtrage
   function filterProjects(category) {
@@ -186,7 +155,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       project.classList.toggle("hidden", !isMatch);
     });
-    updatePaginationDots();
   }
 
   // Écouteurs d'événements pour les filtres
@@ -203,61 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Filtrage initial
   filterProjects("all");
-
-  const marquee = document.getElementById("projectsMarquee");
-  const track = document.getElementById("marqueeTrack");
-  const btnNext = document.getElementById("nextBtn");
-  const btnPrev = document.getElementById("prevBtn");
-
-  let isDragging = false;
-  let startX, scrollLeft;
-
-  // Sync dots on scroll
-  marquee.addEventListener("scroll", syncActiveDot);
-
-  // Mouse Drag Logic
-  marquee.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    startX = e.pageX - marquee.offsetLeft;
-    scrollLeft = marquee.scrollLeft;
-  });
-
-  marquee.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - marquee.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    marquee.style.scrollSnapType = "none"; // Désactive le snap pendant le drag
-    marquee.scrollLeft = scrollLeft - walk;
-  });
-
-  marquee.addEventListener("mouseup", () => {
-    isDragging = false;
-    marquee.style.scrollSnapType = "x mandatory"; // Réactive le snap
-  });
-  marquee.addEventListener("mouseleave", () => {
-    isDragging = false;
-    marquee.style.scrollSnapType = "x mandatory";
-  });
-
-  // Manual Navigation
-  btnNext.addEventListener("click", () => {
-    const firstCard = marquee.querySelector(".project-card");
-    const cardWidth = firstCard ? firstCard.offsetWidth + 32 : 300;
-    marquee.scrollTo({
-      left: marquee.scrollLeft + cardWidth,
-      behavior: "smooth",
-    });
-  });
-
-  btnPrev.addEventListener("click", () => {
-    const firstCard = marquee.querySelector(".project-card");
-    const cardWidth = firstCard ? firstCard.offsetWidth + 32 : 300;
-    marquee.scrollTo({
-      left: marquee.scrollLeft - cardWidth,
-      behavior: "smooth",
-    });
-  });
 });
 
 // Message suggestion chips
